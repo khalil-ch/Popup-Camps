@@ -135,6 +135,19 @@ class userC
     }
     
 }
+function deleteuser($email) {
+            try {
+                $pdo = getConnexion();
+                $query = $pdo->prepare(
+                    'DELETE FROM users WHERE email = :email'
+                );
+                $query->execute([
+                    'email' => $email
+                ]);
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
+        }
 
 
 
