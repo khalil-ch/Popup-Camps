@@ -107,7 +107,23 @@ else
 {
 $error="Something went wrong. Please try again";
 }
-
+function wpf_dev_profanity_filter_paragraph( $field_id, $field_submit, $form_data ) {
+    //Create your list of profanity words separated by commas
+    $blocked_words = array( 
+        'badword1', 
+        'badword2'
+    );
+ 
+    foreach( $blocked_words as $word ) {
+        if(strpos($field_submit, $word) !== FALSE ) {
+            wpforms()->process->errors[ $form_data['id'] ][ $field_id ] = esc_html__( 'No profanity allowed.', 'wpforms' );
+            return;
+        }
+    }
+ 
+}
+ 
+add_action( 'wpforms_process_validate_textarea', 'wpf_dev_profanity_filter_paragraph', 10, 3 );
 }
 ?>
 

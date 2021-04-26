@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
 
 	
 
-	$sql="UPDATE users SET name=(:name), firstname=(:firstname), gender=(:gender), mobileno=(:mobileno), designation=(:designation) WHERE idem=(:idedit)";
+	$sql="UPDATE employees SET name=(:name), firstname=(:firstname), gender=(:gender), mobileno=(:mobileno), designation=(:designation) WHERE idem=(:idedit)";
 	$query = $dbh->prepare($sql);
 	$query-> bindParam(':name', $name, PDO::PARAM_STR);
 	$query-> bindParam(':firstname', $firstname, PDO::PARAM_STR);
