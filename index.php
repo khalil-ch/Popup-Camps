@@ -71,6 +71,7 @@ $results=$query->fetchAll(PDO::FETCH_OBJ);
 if($query->rowCount() > 0)
 {
 $_SESSION['alogin']=$_POST['username'];
+echo "<script type='text/javascript'>alert('welcome back!');</script>";
 echo "<script type='text/javascript'> document.location = 'profile.php'; </script>";
 } else{
   
