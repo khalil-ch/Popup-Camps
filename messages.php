@@ -70,8 +70,8 @@ else{
 		<div class="content-wrapper">
 			<div class="container-fluid">
 
-				<div class="row">
-					<div class="col-md-12">
+				<div class="row align-items-center">
+					<div class="col-11">
 
 						<h2 class="page-title">Messages</h2>
 
