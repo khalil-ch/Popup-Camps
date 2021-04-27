@@ -54,7 +54,7 @@
             <td><input type="text" disabled name="montant" id="" value="<?php echo $element['montant_panier']; ?>"></td> 
 
             <td><?php echo $row['prix_produit']; ?></td>
-            <td><img width="50" height="50" src="../back/view/uploads/<?=$row['img_produit']?>"> </td>
+            <td><img width="50" height="50" src="../../back/view/uploads/<?=$row['img_produit']?>"> </td>
             <td> <form action="" method="post">
                 <a class="btn btn-primary" href="afficherProduit.php?id=<?php echo $row['id_produit']; ?>">View Product</a>
                    

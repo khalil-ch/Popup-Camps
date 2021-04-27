@@ -114,13 +114,14 @@
             
             <br>
             <br>
-		    <input class="btn btn-primary" type="submit" value="Update" name="update" id="update" class="btn btn-primary" style="margin-top:20px;">
-			   <a href="afficherProduits.php" class="btn btn-info" class="btn btn-success" style="margin-top:20px;">Go back to view</a>
+		    <input class="btn btn-primary" type="submit" value="Update" name="update" id="test" class="btn btn-primary" style="margin-top:20px;">
+			   <a href="produit.php" class="btn btn-info" class="btn btn-success" style="margin-top:20px;">Go back to view</a>
 		  </fieldset>
 		</form>
 		<?php
 		//}
 		?>
   </div>
+         <script src="controleSaisieAddProduit.js"></script> 
 	</body>
 </html>

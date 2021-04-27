@@ -4,7 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<!-- <script src="controleSaisieAddProduit.js"></script> -->
+
 </head>
 <body>
 
@@ -44,11 +44,11 @@
             ?>
                 </select>
           <br>
-          <input type="submit" name="submit" value="submit" id="submitCreate" class="btn btn-primary" >
+          <input type="submit" name="submit" value="submit" id="test" class="btn btn-primary">
             <a href="produit.php" class="btn btn-success">Go back to view</a>
         </fieldset>
       </form>
-      
+       <script src="controleSaisieAddProduit.js"></script> 
   </body>
 </html>
 

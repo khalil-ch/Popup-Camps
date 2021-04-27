@@ -33,7 +33,7 @@ require_once '../Controller/panierC.php';
  
 	<div class="container">
 	<h2>Produits</h2>
-     <a href="afficherProduits.php" class="btn btn-info">View all Products</a>
+     <a href="produits.php" class="btn btn-info">View all Products</a>
 		
 		<hr>
 		<table class="table">
@@ -56,7 +56,7 @@ require_once '../Controller/panierC.php';
                   <td><?php  echo $lib ?></td>  
                  
                   <td><?php echo $prix?></td>
-                    <td><img width="50" height="50" src="uploads/<?=$img?>"> </td>
+                    <td><img width="50" height="50" src="../../back/view/uploads/<?=$img?>"> </td>
 
                  <td>  <form action="" method="post">
                     <input type="number" name="qt" value="<?= $qt ?>">

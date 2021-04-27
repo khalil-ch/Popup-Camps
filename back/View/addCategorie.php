@@ -37,7 +37,7 @@ require_once '../Controller/categorieC.php';
   <fieldset>
     <legend>Information sure la categorie:</legend>
     <label for="cat">nom categorie:</label><br>
-    <input type="text" name="cat" id="" >
+    <input type="text" name="cat" id="" required>
   
     <br>
     <br>
