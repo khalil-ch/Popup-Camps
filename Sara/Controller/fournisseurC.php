@@ -27,8 +27,8 @@
 			$sql="SELECT * FROM fournisseur";
 			$db = config::getConnexion();
 			try{
-				$liste = $db->query($sql);
-				return $liste;
+				$liste_F = $db->query($sql);
+				return $liste_F;
 			}
 			catch (Exception $e){
 				die('Erreur: '.$e->getMessage());
@@ -47,7 +47,7 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
-		function modifierFournisseur($fournisseur, $id_f){
+		function modifierFournisseur($fournisseur, $id){
 			try {
 				$db = config::getConnexion();
 				$query = $db->prepare(
@@ -59,7 +59,7 @@
 					WHERE id_f = :id_f'
 				);
 				$query->execute([
-					'id_f' => $id_f,
+					'id_f' => $id,
 					'type_service_f' => $fournisseur->getType_F(),
 					'telephone_f' => $fournisseur->getTel_F(),
 					'RIB_f' => $fournisseur->getRIB_F(),
@@ -69,14 +69,14 @@
 				$e->getMessage();
 			}
 		}
-		function recupererFournisseur($id_f){
-			$sql="SELECT * from fournisseur where id_f=$id_f";
+		function recupererFournisseur($id){
+			$sql="SELECT * from fournisseur where id_f=$id";
 			$db = config::getConnexion();
 			try{
 				$query=$db->prepare($sql);
 				$query->execute();
 				
-				$fournisseur = $query->fetch(PDO::FETCH_OBJ);
+				$fournisseur = $query->fetch();
 				return $fournisseur;
 			}
 			catch (Exception $e){
