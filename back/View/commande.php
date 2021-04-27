@@ -454,7 +454,7 @@
 				<div class="card-box mb-30">
 					<div class="pd-20">
 						<h2 stlye="text-align:center">Gestion Des Commandes</h2>
-			
+						   <a href="excel.php" class="btn btn-primary" stlye=="margin:10px">Click here to download this data</a>
 					</div>
 					<div class="pb-20">
 				<?php

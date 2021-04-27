@@ -17,6 +17,7 @@ require_once '../Controller/commandeItemsC.php';
 </head>
 <body>
     <table class="table">
+         
         <thead>
             <th>ID Commande</th>
             <th>Date Commande</th>
