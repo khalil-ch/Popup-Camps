@@ -53,7 +53,7 @@
 						<td><?php echo $row['id_categorie']; ?></td>
 					
 					
-					<td><a  target="_blank" class="btn btn-info" href="modifierProduit.php?id=<?php echo $row['id_produit']; ?>">Edit</a>&nbsp;<a target="_blank" class="btn btn-danger" href="supprimerProduit.php?id=<?php echo $row['id_produit']; ?>">Delete</a>
+					<td><a  target="_blank" class="btn btn-info" href="modifierProduit.php?id=<?php echo $row['id_produit']; ?>">Edit</a>&nbsp;<a class="btn btn-danger" href="supprimerProduit.php?id=<?php echo $row['id_produit']; ?>">Delete</a>
 					
 					</td>
 					<td>
