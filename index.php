@@ -3,7 +3,7 @@
 <head>
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>Devcorps</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="deskapp2-master/vendors/images/apple-touch-icon.png">
@@ -42,6 +42,7 @@
 			</div>
 			<div class="login-menu">
 				<ul>
+           <li><a href="admin/index.php">Sign in as admin</a></li>
 					
 			</div>
 		</div>
@@ -121,6 +122,9 @@ echo "<script type='text/javascript'> document.location = 'profile.php'; </scrip
 									<input type="password" placeholder="Password" name="password" class="form-control mb" required>
 									<button class="btn btn-primary btn-block" name="login" type="submit">LOGIN</button>
 								</form>
+<br>
+								<p>Don't Have an Account? <a href="register.php" >Signup</a></p>
+							
 							</div>
 						</div>
 					</div>

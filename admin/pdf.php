@@ -9,6 +9,7 @@ if(strlen($_SESSION['alogin'])==0)
 	header("Location: index.php"); //
 	}
 	else{?>
+<?php 
 
 require('fpdf/fpdf.php');
 $pdf = new FPDF();
@@ -42,3 +43,5 @@ $pdf->Cell(46,12,$column,1);
 } }
 $pdf->Output();
 ?>
+<?php }
+
