@@ -1,6 +1,4 @@
-﻿</html>
- <body>
-	 <div class="left-side-bar">
+﻿	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="header.php">
 				<img src="deskapp2-master/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
@@ -13,39 +11,19 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-
 					
 					<li>
-						<a href="dashboard.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">menu</span>
+						<a href="profile.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-invoice"></span><span class="mtext">profile</span>
 						</a>
 					</li>
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage users</a>
-    <div class="dropdown-menu" aria-labelledby="dropdown01">
-    <a class="dropdown-item" href="userlist.php">Users list</a>
-    <a class="dropdown-item" href="deleteduser.php">deleted users</a>
-    
-  </div>
-</li>
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage employees</a>
-    <div class="dropdown-menu" aria-labelledby="dropdown01">
-    <a class="dropdown-item" href="employeelist.php">employees list</a>
-    <a class="dropdown-item" href="addemployee.php">Add employees</a>
-    
-  </div>
-</li>
-
-                                    
-					</li>
- </li>
+<li>                                     </li>
 						<a href="feedback.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-invoice"></span><span class="mtext">feedback</span>
 						</a>
 					</li>
-
-						
+ </li>
+						</a>
 					</li>
  </li>
 						<a href="notification.php" class="dropdown-toggle no-arrow">
@@ -53,36 +31,17 @@
 						</a>
 					</li>
  </li>
-
-						<a href="download.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">download users</span>
+						<a href="messages.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-invoice"></span><span class="mtext">messages</span>
 						</a>
 					</li>
  </li>
-						<a href="pdf.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">extract pdf</span>
-						</a>
-					</li>
-</li>
-</li>
-						<a href="downloademployees.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">download employees</span>
-						</a>
-					</li>
-</li>
- </li>
-						<a href="pie.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">charts</span>
-						</a>
-					</li>
-
-			
+						
+					
 				</ul>
 			</div>
 		</div>
 	</div>
-
-
 <!-- js -->
 	<script src="deskapp2-master/vendors/scripts/core.js"></script>
 	<script src="deskapp2-master/vendors/scripts/script.min.js"></script>
@@ -94,6 +53,3 @@
 	<script src="deskapp2-master/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="deskapp2-master/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="deskapp2-master/vendors/scripts/dashboard.js"></script>
-
-</body>
-</html>
