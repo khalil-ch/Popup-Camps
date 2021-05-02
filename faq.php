@@ -6,7 +6,7 @@
 	<title>FAQ</title>
 
 	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="deskapp2-master/vendors/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="deskapp2-master/vendors/images/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="deskapp2-master/vendors/images/favicon-16x16.png">
 
@@ -33,7 +33,7 @@
 <body>
 	<div class="pre-loader">
 		<div class="pre-loader-box">
-			<div class="loader-logo"><img src="deskapp2-master/vendors/images/deskapp-logo.svg" alt=""></div>
+			<div class="loader-logo"><img src="images/logo.png" alt=""></div>
 			<div class='loader-progress' id="progress_div">
 				<div class='bar' id='bar1'></div>
 			</div>
@@ -148,44 +148,20 @@
 	</div>
 
 	<div class="left-side-bar">
-		<div class="brand-logo">
-			<a href="profile.php">
-				<img src="deskapp2-master/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
-				<img src="deskapp2-master/vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
-			</a>
-			<div class="close-sidebar" data-toggle="left-sidebar-close">
-				<i class="ion-close-round"></i>
-			</div>
+			<ul class="ts-sidebar-menu">
+			
+			<li class="ts-label">Main</li>
+			<li><a href="profile.php"><i class="fa fa-user"></i> &nbsp;Profile</a>
+			</li>
+			<li><a href="feedback.php"><i class="fa fa-envelope"></i> &nbsp;Feedback</a>
+			</li>
+			<li><a href="notification.php"><i class="fa fa-bell"></i> &nbsp;Notification<sup style="color:red">*</sup></a>
+			</li>
+			<li><a href="messages.php"><i class="fa fa-envelope"></i> &nbsp;Messages</a>
+			</li>
+			</ul>
+			<p class="text-center" style="color:#ffffff; margin-top: 100px;">© Ajay</p>
 		</div>
-		<div class="menu-block customscroll">
-			<div class="sidebar-menu">
-				<ul id="accordion-menu">
-					
-					<li>
-						<a href="profile.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-diagram"></span><span class="mtext">profile</span>
-						</a>
-					</li>
-					<li>
-						<a href="feedback.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-chat3"></span><span class="mtext">feedback</span>
-						</a>
-					</li>
-					<li>
-						<a href="notification.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">notifications</span>
-						</a>
-					</li>
-<li>
-						<a href="messages.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">messages</span>
-						</a>
-					</li>
-					
-				</ul>
-			</div>
-		</div>
-	</div>
 	<div class="mobile-menu-overlay"></div>
 
 	<div class="main-container">

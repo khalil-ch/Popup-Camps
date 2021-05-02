@@ -35,13 +35,16 @@
                      ]);  
                 var options = {  
                       title: '**************                Percentages of male and female users',  
-                      //is3D:true,  
+                     is3D:true,  
                       pieHole: 0.4  
                      };  
                 var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
                 chart.draw(data, options);  
+
            }  
            </script>  
+
+       
       </head>  
       <body>  
 

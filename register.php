@@ -1,60 +1,4 @@
-<html>
-
-<head>
-	<!-- Basic Page Info -->
-	<meta charset="utf-8">
-	<title>Devcorps</title>
-
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="deskapp2-master/vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="deskapp2-master/vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="deskapp2-master/vendors/images/favicon-16x16.png">
-
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="deskapp2-master/vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="deskapp2-master/vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="deskapp2-master/src/plugins/jquery-steps/jquery.steps.css">
-	<link rel="stylesheet" type="text/css" href="deskapp2-master/vendors/styles/style.css">
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-119386393-1');
-	</script>
-</head>
-
-<body class="login-page">
-	<div class="login-header box-shadow">
-		<div class="container-fluid d-flex justify-content-between align-items-center">
-			<div class="brand-logo">
-				<a href="login.html">
-					<img src="vendors/images/deskapp-logo.svg" alt="">
-				</a>
-			</div>
-			<div class="login-menu">
-				<ul>
-					<li><a href="index.php">Login</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-md-6 col-lg-7">
-					<img src="deskapp2-master/vendors/images/register-page-img.png" alt="">
-				</div>
-				<div class="col-md-6 col-lg-5">
-					<?php
+<?php
 include('includes/config.php');
 if(isset($_POST['submit']))
 {
@@ -107,23 +51,7 @@ else
 {
 $error="Something went wrong. Please try again";
 }
-function wpf_dev_profanity_filter_paragraph( $field_id, $field_submit, $form_data ) {
-    //Create your list of profanity words separated by commas
-    $blocked_words = array( 
-        'badword1', 
-        'badword2'
-    );
- 
-    foreach( $blocked_words as $word ) {
-        if(strpos($field_submit, $word) !== FALSE ) {
-            wpforms()->process->errors[ $form_data['id'] ][ $field_id ] = esc_html__( 'No profanity allowed.', 'wpforms' );
-            return;
-        }
-    }
- 
-}
- 
-add_action( 'wpforms_process_validate_textarea', 'wpf_dev_profanity_filter_paragraph', 10, 3 );
+
 }
 ?>
 
@@ -138,14 +66,14 @@ add_action( 'wpforms_process_validate_textarea', 'wpf_dev_profanity_filter_parag
 	<meta name="author" content="">
 
 	
-	<link rel="stylesheet" href="deskapp2-master/css/font-awesome.min.css">
-	<link rel="stylesheet" href="deskapp2-master/css/bootstrap.min.css">
-	<link rel="stylesheet" href="deskapp2-master/css/dataTables.bootstrap.min.css">
-	<link rel="stylesheet" href="deskapp2-master/css/bootstrap-social.css">
-	<link rel="stylesheet" href="deskapp2-master/css/bootstrap-select.css">
-	<link rel="stylesheet" href="deskapp2-master/css/fileinput.min.css">
-	<link rel="stylesheet" href="deskapp2-master/css/awesome-bootstrap-checkbox.css">
-	<link rel="stylesheet" href="deskapp2-master/css/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-social.css">
+	<link rel="stylesheet" href="css/bootstrap-select.css">
+	<link rel="stylesheet" href="css/fileinput.min.css">
+	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+	<link rel="stylesheet" href="css/style.css">
     <script type="text/javascript">
 
 	function validate()
@@ -170,16 +98,40 @@ add_action( 'wpforms_process_validate_textarea', 'wpf_dev_profanity_filter_parag
         
 </script>
 </head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
+.bg {
+  /* The image used */
+  background-image: url("images/hero_1.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
 <body>
+<div class="bg">
 	<div class="login-page bk-img">
+
+<div class="container">
+
+
 		<div class="form-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
+			
+
+				
 						<h1 class="text-center text-bold mt-2x">Register</h1>
                         <div class="hr-dashed"></div>
-						<div class="well row pt-2x pb-3x bk-light text-center">
+						
                          <form method="post" class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();">
                             <div class="form-group">
                             <label class="col-sm-1 control-label">Name<span style="color:red">*</span></label>
@@ -250,34 +202,6 @@ add_action( 'wpforms_process_validate_textarea', 'wpf_dev_profanity_filter_parag
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- success Popup html Start -->
-	<button type="button" id="success-modal-btn" hidden data-toggle="modal" data-target="#success-modal" data-backdrop="static">Launch modal</button>
-	<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered max-width-400" role="document">
-			<div class="modal-content">
-				<div class="modal-body text-center font-18">
-					<h3 class="mb-20">Form Submitted!</h3>
-					<div class="mb-30 text-center"><img src="vendors/images/success.png"></div>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				</div>
-				<div class="modal-footer justify-content-center">
-					<a href="login.html" class="btn btn-primary">Done</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- success Popup html End -->
-	<!-- js -->
-	<script src="deskapp2-master/vendors/scripts/core.js"></script>
-	<script src="deskapp2-master/vendors/scripts/script.min.js"></script>
-	<script src="deskapp2-master/vendors/scripts/process.js"></script>
-	<script src="deskapp2-master/vendors/scripts/layout-settings.js"></script>
-	<script src="deskapp2-master/src/plugins/jquery-steps/jquery.steps.js"></script>
-	<script src="deskapp2-master/vendors/scripts/steps-setting.js"></script>
-</body>
 
+</body>
 </html>

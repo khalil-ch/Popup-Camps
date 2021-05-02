@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
   {
 	
 	$name=$_POST['name'];
-	$firstname=$_POST['firstname'];
+	$idmanager=$_POST['idmanager'];
 	$gender=$_POST['gender'];
 	$mobileno=$_POST['mobileno'];
 	$designation=$_POST['designation'];
@@ -27,10 +27,10 @@ if(isset($_POST['submit']))
 
 	
 
-	$sql="UPDATE employees SET name=(:name), firstname=(:firstname), gender=(:gender), mobileno=(:mobileno), designation=(:designation) WHERE idem=(:idedit)";
+	$sql="UPDATE employees SET name=(:name), idmanager=(:idmanager), gender=(:gender), mobileno=(:mobileno), designation=(:designation) WHERE idem=(:idedit)";
 	$query = $dbh->prepare($sql);
 	$query-> bindParam(':name', $name, PDO::PARAM_STR);
-	$query-> bindParam(':firstname', $firstname, PDO::PARAM_STR);
+	$query-> bindParam(':idmanager', $idmanager, PDO::PARAM_STR);
 	$query-> bindParam(':gender', $gender, PDO::PARAM_STR);
 	$query-> bindParam(':mobileno', $mobileno, PDO::PARAM_STR);
 	$query-> bindParam(':designation', $designation, PDO::PARAM_STR);
@@ -122,9 +122,9 @@ if(isset($_POST['submit']))
 <div class="col-sm-4">
 <input type="text" name="name" class="form-control" required value="<?php echo htmlentities($result->name);?>">
 </div>
-<label class="col-sm-2 control-label">firstname<span style="color:red">*</span></label>
+<label class="col-sm-2 control-label">Manager's id<span style="color:red">*</span></label>
 <div class="col-sm-4">
-<input type="text" name="firstname" class="form-control" required value="<?php echo htmlentities($result->firstname);?>">
+<input type="text" name="idmanager" class="form-control" required value="<?php echo htmlentities($result->idmanager);?>">
 </div>
 </div>
 

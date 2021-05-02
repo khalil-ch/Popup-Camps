@@ -6,7 +6,20 @@ if(strlen($_SESSION['alogin'])==0)
 	{	
 header('location:index.php');
 }
-else{   
+else{
+	
+if(isset($_POST['submit']))
+  {	
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+
+	$sql="UPDATE admin SET username=(:name), email=(:email)";
+	$query = $dbh->prepare($sql);
+	$query-> bindParam(':name', $name, PDO::PARAM_STR);
+	$query-> bindParam(':email', $email, PDO::PARAM_STR);
+	$query->execute();
+	$msg="Information Updated Successfully";
+}    
 ?>
 
 <!doctype html>
@@ -77,7 +90,7 @@ else{
 									<div class="panel-heading">Notification</div>
 									   <div class="panel-body">
 <?php 
-$reciver = $_SESSION['alogin'];
+$reciver = 'Admin';
 $sql = "SELECT * from  notification where notireciver = (:reciver) order by time DESC";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);

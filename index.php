@@ -31,13 +31,39 @@
 		gtag('config', 'UA-119386393-1');
 	</script>
 </head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
 
-<body class="login-page">
+.bg {
+  /* The image used */
+  background-image: url("images/camp.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+<div class="bg">
+<div class="login-page bk-img">
+
 	<div class="login-header box-shadow">
+<div class="bg">
+<div class="container">
+
+
+		<div class="form-content">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
 				<a href="login.html">
-					<img src="deskapp2-master/vendors/images/deskapp-logo.svg" alt="">
+					<img src="vendors/images/deskapp-logo.svg" alt="">
 				</a>
 			</div>
 			<div class="login-menu">
@@ -47,11 +73,12 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 col-lg-7">
-					<img src="deskapp2-master/vendors/images/register-page-img.png" alt="">
+					<img src="vendors/images/register-page-img.png" alt="">
 				</div>
 				<div class="col-md-6 col-lg-5">
 				<?php

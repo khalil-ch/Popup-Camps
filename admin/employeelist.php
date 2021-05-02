@@ -126,10 +126,11 @@ if(isset($_REQUEST['unconfirm']))
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
 										<tr>
-										<th>#</th>
+										<th>#</th> 
 												<th>Image</th>
+												
                                                 <th>Name</th>
-                                                <th>firstname</th>
+                                                <th>ID Manager</th>
                                                 <th>Gender</th>
                                                 <th>mobileno</th>
                                                 <th>Designation</th>
@@ -153,7 +154,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><img src="../images/<?php echo htmlentities($result->image);?>" style="width:50px; border-radius:50%;"/></td>
                                             <td><?php echo htmlentities($result->name);?></td>
-                                            <td><?php echo htmlentities($result->firstname);?></td>
+                                            <td><?php echo htmlentities($result->idmanager);?></td>
                                             <td><?php echo htmlentities($result->gender);?></td>
                                             <td><?php echo htmlentities($result->mobileno);?></td>
                                             <td><?php echo htmlentities($result->designation);?> 

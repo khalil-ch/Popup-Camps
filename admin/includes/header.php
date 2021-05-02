@@ -68,14 +68,14 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="profile.php"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="faq.php"><i class="dw dw-help"></i> Help</a>
-                                                <a class="dropdown-item" href="change-password.php"><i class="dw dw-help"></i> change password</a>
+						<a class="dropdown-item" href="notification.php"><i class="dw dw-help"></i> Notifications</a>
+                                                <a class="dropdown-item" href="change-password.php"><i class="dw dw-help"></i>change password</a>
 						<a class="dropdown-item" href="logout.php"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
 			</div>
 			<div class="github-link">
-				<a href="https://github.com/khalil-ch/Popup-Camps" target="_blank"><img src="deskapp2-master/vendors/images/github.svg" alt=""></a>
+				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg" alt=""></a>
 			</div>
 		</div>
 	</div>
@@ -154,10 +154,6 @@
 			</div>
 		</div>
 	</div>
-      <audio autoplay loop>
-  <source src="ambiment_the_ambient-415.mp3" /> <!-- works on IE9+, FF3.5+, Chrome4+ -->
-  
-</audio>
 
 	</div>
 	<!-- js -->

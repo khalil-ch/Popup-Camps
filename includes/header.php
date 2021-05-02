@@ -5,7 +5,7 @@
 	<title>Devcorps</title>
 
 	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="deskapp2-master/vendors/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="deskapp2-master/vendors/images/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="deskapp2-master/vendors/images/favicon-16x16.png">
 
@@ -34,7 +34,7 @@
 <body>
 	<div class="pre-loader">
 		<div class="pre-loader-box">
-			<div class="loader-logo"><img src="deskapp2-master/vendors/images/deskapp-logo.svg" alt=""></div>
+			<div class="loader-logo"><img src="images/logo.png" alt=""></div>
 			<div class='loader-progress' id="progress_div">
 				<div class='bar' id='bar1'></div>
 			</div>
@@ -69,6 +69,7 @@
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="profile.php"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="faq.php"><i class="dw dw-help"></i> Help</a>
+                                                <a class="dropdown-item" href="change-password.php"><i class="dw dw-help"></i> change password</a>
 						<a class="dropdown-item" href="logout.php"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>

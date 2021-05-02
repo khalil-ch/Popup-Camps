@@ -7,7 +7,7 @@ if(isset($_POST['submit']))
 
 $idem=$_POST['idem'];
 $name=$_POST['name'];
-$firstname=$_POST['firstname'];
+$idmanager=$_POST['idmanager'];
 $gender=$_POST['gender'];
 $mobileno=$_POST['mobileno'];
 $designation=$_POST['designation'];
@@ -24,11 +24,11 @@ $querynoti-> bindParam(':notireciver',$reciver, PDO::PARAM_STR);
 $querynoti-> bindParam(':notitype', $notitype, PDO::PARAM_STR);
 $querynoti->execute();    
     
-$sql ="INSERT INTO employees(idem,name, firstname, gender, mobileno, designation) VALUES(:idem, :name, :firstname, :gender, :mobileno, :designation )";
+$sql ="INSERT INTO employees(idem,name, idmanager, gender, mobileno, designation) VALUES(:idem, :name, :idmanager, :gender, :mobileno, :designation )";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':idem', $idem, PDO::PARAM_STR);
 $query-> bindParam(':name', $name, PDO::PARAM_STR);
-$query-> bindParam(':firstname', $firstname, PDO::PARAM_STR);
+$query-> bindParam(':idmanager', $idmanager, PDO::PARAM_STR);
 $query-> bindParam(':gender', $gender, PDO::PARAM_STR);
 $query-> bindParam(':mobileno', $mobileno, PDO::PARAM_STR);
 $query-> bindParam(':designation', $designation, PDO::PARAM_STR);
@@ -99,9 +99,9 @@ $error="Something went wrong. Please try again";
                             </div>
 
                             <div class="form-group">
-                            <label class="col-sm-1 control-label">first name<span style="color:red">*</span></label>
+                            <label class="col-sm-1 control-label">manager's ID <span style="color:red">*</span></label>
                             <div class="col-sm-5">
-                            <input type="text" name="firstname" class="form-control" required >
+                            <input type="text" name="idmanager" class="form-control" required >
                             </div>
 
                             <label class="col-sm-1 control-label">Desig
