@@ -34,6 +34,7 @@
     <a class="dropdown-item" href="employeelist.php">employees list</a>
     <a class="dropdown-item" href="addemployee.php">Add employees</a>
     <a class="dropdown-item" href="adminemployees.php">Employees run by me</a>
+    <a class="dropdown-item" href="admin.php">my credentiels </a>
     
   </div>
 </li>
@@ -43,6 +44,15 @@
     <a class="dropdown-item" href="download.php">excel list </a>
     <a class="dropdown-item" href="pdf.php">pdf list</a>
     <a class="dropdown-item" href="downloademployees.php">Employees excel list </a>
+    
+  </div>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">charts</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+    <a class="dropdown-item" href="pie.php">gender repartition </a>
+    <a class="dropdown-item" href="barchart.php">designation per gender</a>
+    
     
   </div>
 </li>
@@ -62,12 +72,13 @@
 							<span class="micon dw dw-invoice"></span><span class="mtext">notifications</span>
 						</a>
 					</li>
-
  </li>
-						<a href="pie.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">charts</span>
+						<a href="admin-map.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-invoice"></span><span class="mtext">locations</span>
 						</a>
 					</li>
+
+
 
 			
 				</ul>
