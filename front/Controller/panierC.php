@@ -5,11 +5,33 @@
 	class panierC {
 		
 		function ajouterPanier($id_user,$prix,$idProd,$qt){
+			$db = config::getConnexion();
+			$sqlCheck ="select * from panier where id_produit = $idProd and id_user = $id_user";
+			$prep=$db->prepare($sqlCheck);
+			$prep->execute();
+			$count = $prep->rowCount();
+			
+			if($count > 0) {
+			
+				$row = $prep->fetch();
+				//var_dump($row);
+				$newqt = $row['qt_produit'] + $qt;
+				$newprice = $prix * $newqt;
+				$updateReq = "UPDATE panier set qt_produit = $newqt , montant_panier=$newprice where id_user = $id_user and id_produit = $idProd";
+				$prepareupdate = $db->prepare($updateReq);
+				$prepareupdate->execute();
+			}
+			else{
+
+			
+
+
+
 			$sql="INSERT INTO `panier` (`id_user`,`qt_produit`,`id_produit`,`montant_panier`) 
 			VALUES (:id,:qt,:id_prod,:montant)";
            
             
-			$db = config::getConnexion();
+			
 			try{
 				$query = $db->prepare($sql);
 			
@@ -22,8 +44,10 @@
 			}
 			catch (Exception $e){
 				echo 'Erreur: '.$e->getMessage();
-			}			
+			}	
+			}		
 		}
+		
 		
 		function afficherPanier($id){
 			
@@ -71,7 +95,7 @@
 			}
 		}
 		function supprimerTout($id){
-			$sql="SELECT * from panier where id_user=$id";
+			$sql="delete from panier where id_user=$id";
 			$db = config::getConnexion();
 			try{
 				$query=$db->prepare($sql);

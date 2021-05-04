@@ -1,4 +1,4 @@
-   <header class="site-navbar site-navbar-target" role="banner" style="display:flex; flex-direction:column">
+       <header class="site-navbar site-navbar-target" role="banner">
 
         <div class="container">
           <div class="row align-items-center position-relative">
@@ -18,17 +18,16 @@
 
               
 
-              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation" stlye="width:600px">
-                <ul class="site-menu main-menu js-clone-nav ml-auto " style="display:flex; list-style:none" >
+              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+                <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                         
-                  <li><a href="produits.php" class="nav-link">Produit</a></li>
+                  <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="trips.html" class="nav-link">Trips</a></li>
-                  <li><a href="afficherProduits.php" class="nav-link">Produit</a></li>
+                  <li><a href="produits.php" class="nav-link">Produits</a></li>
                   <li><a href="blog.html" class="nav-link">Blog</a></li>
-                
-                 <li><a href="about.html" class="nav-link">About</a></li>
-                   <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="shopingcart.php" class="nav-link">Cart</a></li>
+                  
                 </ul>
               </nav>
             </div>

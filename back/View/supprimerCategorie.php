@@ -1,7 +1,7 @@
 <?PHP
    
 	include "../Controller/categorieC.php";
-    require_once '../config.php';
+    require_once '../../config.php';
 	$categorieC=new categorieC();
 	
 	if (isset($_GET["id"])){

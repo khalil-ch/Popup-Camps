@@ -7,7 +7,7 @@
 	if (isset($_GET["id"])){
 		$commandeC->supprimerCommande($_GET["id"]);
       //  echo "deleted";
-		header('Commande.php');
+		header("location:afficherCommandes.php");
 	}
 
 ?>

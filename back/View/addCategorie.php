@@ -13,8 +13,8 @@ require_once '../Controller/categorieC.php';
                    $categorieC = new categorieC();
                    $categorieC->ajouterCategorie($categorie);
         
-                      echo "New Category created successfully.";
-                     // header("location:viewCategorie.php");
+                     // echo "New Category created successfully.";
+             
                   
 
                   
@@ -23,13 +23,13 @@ require_once '../Controller/categorieC.php';
 
     ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 </head>
-<body>
+<body> -->
 
 <h2 style="margin-left:50px;">Create Category</h2>
 
@@ -37,19 +37,19 @@ require_once '../Controller/categorieC.php';
   <fieldset>
     <legend>Information sure la categorie:</legend>
     <label for="cat">nom categorie:</label><br>
-    <input type="text" name="cat" id="" required>
+    <input type="text" name="cat" id="categorie" required>
   
     <br>
     <br>
     <input type="submit" name="submit" value="submit" id="submitCreateCategorie" class="btn btn-primary" >
-          <a href="produit.php" class="btn btn-success">Go back to view</a>
+          <a href="affichercategorie.php" class="btn btn-success">Go back to view</a>
   </fieldset>
 </form>
      <!-- <script src="test.js">
 		
 		</script>  -->
-</body>
-</html>
+  <!-- </body>
+  </html> -->
 
 
 

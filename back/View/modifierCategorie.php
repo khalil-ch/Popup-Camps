@@ -7,7 +7,7 @@ require_once '../Controller/categorieC.php';
 // if the form's submit button is clicked, we need to process the form
 	if (isset($_POST['submit']) && isset($_POST['cat'])) {
 		// get variables from the form
-            $cat = $_POST['cat'];
+                  $cat = $_POST['cat'];
                 		//write sql query
                    $categorie = new categorie($cat);
                    $categorieC = new categorieC();
@@ -29,13 +29,13 @@ require_once '../Controller/categorieC.php';
 </head>
 <body>
 
-<h2 style="margin-left:50px;">Create Category</h2>
+<h2 style="margin-left:50px;">Edit Category</h2>
 
 <form action="" method="POST" class="form-group" style="margin-left:50px;">
   <fieldset>
     <legend>Information sure la categorie:</legend>
     <label for="cat">nom categorie:</label><br>
-    <input type="text" name="cat" id="" >
+    <input type="text" name="cat" id="categorie" >
   
     <br>
     <br>

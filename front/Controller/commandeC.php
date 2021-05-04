@@ -135,9 +135,10 @@
                 );
 
                 $montant = $req->fetch();
+				
                 $montant = $montant['sum(qt*prix)'];
 
-
+					var_dump($montant);
 
                 $update = "UPDATE commande SET montant_commande = :montant where id_commande = :id_commande";
                 $req2 = $db->prepare($update);

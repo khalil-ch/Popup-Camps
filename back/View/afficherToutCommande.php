@@ -16,13 +16,23 @@ require_once '../Controller/commandeItemsC.php';
     <title></title>
 </head>
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <h2 stlye="text-align:center">Gestion Des Commandes</h2>
+                	   <a href="excel.php" class="btn btn-primary" stlye="margin:10px">Click here to download this data</a>
     <table class="table">
          
         <thead>
             <th>ID Commande</th>
             <th>Date Commande</th>
             <th>Montant Commande</th>
-            <th>Voir Cette Commande</th>
+    
             <th>Supprimer Cette Commande</th>
         </thead>
         <?php
@@ -38,7 +48,7 @@ require_once '../Controller/commandeItemsC.php';
             <td> <?php echo $commande['date_commande'];?> </td>
             <td> <?php echo $commande['montant_commande'];?> </td>
                 <td><a class="btn btn-info" target="_blank" href="afficherCommande.php?id=<?=$commande['id_commande'];?>">Afficher cette commande</a></td>
-                <td><a class="btn btn-danger" target="_blank" href="supprimerCommande.php?id=<?=$commande['id_commande'];?>">Supprimer Commande </a> </td>
+                <td><a class="btn btn-danger" href="supprimerCommande.php?id=<?=$commande['id_commande'];?>">Supprimer Commande </a> </td>
         </tr>
         <?php
 

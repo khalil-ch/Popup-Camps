@@ -1,4 +1,4 @@
-const submit = document.getElementById("test");
+/*const submit = document.getElementById("test");
 
 submit.addEventListener('click', () => {
     const lib = document.getElementById("lib").value;
@@ -10,4 +10,4 @@ submit.addEventListener('click', () => {
         alert(' Prix et Quantite doit etre un nombre');
         }
 
-})
+})*/

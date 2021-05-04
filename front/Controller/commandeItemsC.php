@@ -5,11 +5,25 @@
 	class commandeItemsC {
 		
 		function ajouterCommandeItem($id_commande,$idProd,$qt){
+			$db = config::getConnexion();
+			 $req="select qt_produit from produit where id_produit = $idProd";
+			$prep = $db->prepare($req);
+			$prep->execute();
+			$stock = $prep->fetch();
+			$stock= $stock['qt_produit'];
+			var_dump($stock);
+			var_dump($qt);
+			if($stock<$qt)
+			{
+				//echo "la quantite est plus que le stock";
+				return 0;
+			}
+			else{
 			$sql="INSERT INTO `commande_items` (`id_commande`,`id_produit`,`qt_produit`) 
 			VALUES (:id,:id_prod,:qt)";
            
             
-			$db = config::getConnexion();
+		
 			try{
 				$query = $db->prepare($sql);
 			
@@ -21,7 +35,10 @@
 			}
 			catch (Exception $e){
 				echo 'Erreur: '.$e->getMessage();
-			}			
+			}	
+			return 1;
+			}	
+				
 		}
 	
 
@@ -85,6 +102,8 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 		}
+
+		
 }
 
 ?>

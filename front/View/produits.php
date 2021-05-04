@@ -1,35 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/img/ico/favicon.ico">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/ico/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/ico/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" href="assets/img/ico/apple-touch-icon-57x57.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
     
-
-    <!-- Bootstrap Core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/plugins.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/pe-icons.css" rel="stylesheet">
+
+      <!-- font awesome -->
+
+      <script src="https://use.fontawesome.com/your-embed-code.js"></script>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <!-- my custom input css -->
+       <link rel="stylesheet" href="styleSearchInput.css">
     <title>Document</title>
 </head>
 <body>
+  
     <?php
     include_once './header.php';
 	require_once "../Controller/produitC.php";
@@ -39,7 +42,13 @@
 	
 ?>
 
- 
+      <div class="search-container" >
+          <form action="searchProduct.php" method="GET">
+          <input type="search" name="search" id="search" placeholder="search">
+           <input type="submit" value="search" class="searchBtn">
+            
+        </form>
+      </div>
     <section>
             <div class="section-inner"> 
                 <div class="container p-50">
@@ -54,13 +63,13 @@
                           <div class="overlay-item-caption smoothie"></div>
 							<div class="hover-item-caption smoothie">
                               <div class="vertical-center smoothie">
-                            <a href="afficherProduit.php?id='.$row["id_produit"].' "class="smoothie btn btn-primary">View</a>    
+                            <a href="singleproduct.php?id='.$row["id_produit"].' "class="smoothie btn btn-primary">View</a>    
                               </div>
                                </div>
                             </div>
                             <div class="item-excerpt">
                                 <h4 class="pull-right">'.$row["prix_produit"].' </h4>
-                                <h4><a href="afficherProduit.php?id='.$row["id_produit"].'">'.$row["lib_produit"] .' </a></h4>
+                                <h4><a href="singleproduct.php?id='.$row["id_produit"].'">'.$row["lib_produit"] .' </a></h4>
                                 <p>Taste oh spoke about no solid of hills up shade. Occasion so bachelor humoured striking by attended doubtful be it.</p>
                            </div>
                       </div>';

@@ -114,7 +114,7 @@
             
             <br>
             <br>
-		    <input class="btn btn-primary" type="submit" value="Update" name="update" id="test" class="btn btn-primary" style="margin-top:20px;">
+		    <input class="btn btn-primary" type="submit" value="Update" name="update" id="submit" class="btn btn-primary" style="margin-top:20px;">
 			   <a href="produit.php" class="btn btn-info" class="btn btn-success" style="margin-top:20px;">Go back to view</a>
 		  </fieldset>
 		</form>
@@ -122,6 +122,6 @@
 		//}
 		?>
   </div>
-         <script src="controleSaisieAddProduit.js"></script> 
+         <script src="controle.js"></script> 
 	</body>
 </html>

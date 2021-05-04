@@ -94,7 +94,45 @@
 			}
 		}
 
+		function updateStock($idProd,$qt){
+			$db = config::getConnexion();
+			$req = "select qt_produit from produit where id_produit = $idProd";
+			$exec= $db->query($req);
+			$newqt = $exec->fetch()['qt_produit'] ;
+			$newqt -= $qt;
+
+			$sql="update produit set qt_produit = $newqt where id_produit = $idProd";
+			
+			try{
+				$exec = $db->query($sql);
+				if($exec)
+				{
+					return "updated";
+				}
+				else{
+					return "error updating";
+				}
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}
+
+		}
+		function rechercheProduit($lib){
+			$db = config::getConnexion();
+			$sql="SELECT * FROM produit where lib_produit like '%$lib%'";
+			
+			try{
+				$liste = $db->prepare($sql);
+				$liste->execute();
+				$listes = $liste->fetchAll();
+				return $listes;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
 		
+		}
 	}
 
 ?>

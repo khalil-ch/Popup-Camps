@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h2 style="margin-left:50px;">Adding Product Form</h2>
+
 
       <form action="" method="POST" class="form-group" style="margin-left:50px;" enctype="multipart/form-data">
         <fieldset>
@@ -17,13 +17,13 @@
           <input type="text" name="lib" id="lib" required>
           <br>
           <label for="prix">Prix:</label><br>
-          <input type="text" name="prix" id="prix" required>
+          <input type="number" min="1" name="prix" id="prix" required>
           <br>
           <label for="qt">Quantite:</label><br>
-          <input type="text" name="qt" id="qt" required>
+          <input type="number" min="1" name="qt" id="qt" required>
           <br>
           <br>
-          <input type="file" name="img" class="btn btn-secondary">
+          <input type="file" name="img" required class="btn btn-secondary">
           <br>
           <label for="categorie">Categorie</label>
            <?php
@@ -44,11 +44,11 @@
             ?>
                 </select>
           <br>
-          <input type="submit" name="submit" value="submit" id="test" class="btn btn-primary">
+          <input type="submit" name="submit" value="submit" id="submit" class="btn btn-primary">
             <a href="produit.php" class="btn btn-success">Go back to view</a>
         </fieldset>
       </form>
-       <script src="controleSaisieAddProduit.js"></script> 
+    
   </body>
 </html>
 

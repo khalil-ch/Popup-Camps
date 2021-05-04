@@ -28,13 +28,13 @@
 				<th>Image</th>
 				<th>ID Categorie</th>
 				<th>Fonctionalite</th>
-				<th>More Info</th>
+		
 			</tr>
 			</thead>
 		<tbody>
 		
-		<a href="addproduit.php" class="btn btn-primary" style="margin-right:20px" target="_blank">Ajouter un produit</a>
-		<a target="_blank" href="addCategorie.php" class="btn btn-primary">Ajouter une Categorie</a>
+		<a target="_blank" href="ajouterProduit.php" class="btn btn-primary" style="margin-right:20px" target="_blank">Ajouter un produit</a>
+		<a target="_blank" href="editcategorie.php" class="btn btn-primary">Ajouter une Categorie</a>
 		
 		<br>
 		<br>
@@ -53,12 +53,10 @@
 						<td><?php echo $row['id_categorie']; ?></td>
 					
 					
-					<td><a  target="_blank" class="btn btn-info" href="modifierProduit.php?id=<?php echo $row['id_produit']; ?>">Edit</a>&nbsp;<a class="btn btn-danger" href="supprimerProduit.php?id=<?php echo $row['id_produit']; ?>">Delete</a>
+					<td><a  target="_blank" class="btn btn-info" href="editProduct.php?id=<?php echo $row['id_produit']; ?>">Edit</a>&nbsp;<a class="btn btn-danger" href="supprimerProduit.php?id=<?php echo $row['id_produit']; ?>">Delete</a>
 					
 					</td>
-					<td>
-							<a target="_blank"  class="btn btn-primary" href="afficherProduit.php?id=<?php echo $row['id_produit']; ?>">View Product</a>
-					</td>
+					
 					</tr>	
 
 			<?php 
@@ -73,3 +71,5 @@
 	</div>
 	</body>
 </html>
+
+
