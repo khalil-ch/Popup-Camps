@@ -34,7 +34,7 @@
     <a class="dropdown-item" href="employeelist.php">employees list</a>
     <a class="dropdown-item" href="addemployee.php">Add employees</a>
     <a class="dropdown-item" href="adminemployees.php">Employees run by me</a>
-    <a class="dropdown-item" href="admin.php">my credentiels </a>
+    
     
   </div>
 </li>

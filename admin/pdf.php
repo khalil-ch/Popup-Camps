@@ -12,7 +12,7 @@ if(strlen($_SESSION['alogin'])==0)
 <?php 
 
 require('fpdf/fpdf.php');
-$pdf = new FPDF();
+$pdf = new FPDF('P','mm',array(500,500));
 $pdf->AddPage();
 // code for print Heading of tables
 $pdf->SetFont('Arial','B',12);
