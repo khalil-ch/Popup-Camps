@@ -73,6 +73,7 @@ $list=$offer1->afficherOffer();
             <div class="row">
                 <div class="col-md-12">
 
+
 <hr>
 
 <div class="hr-dashed"></div>
@@ -117,7 +118,7 @@ $list=$offer1->afficherOffer();
 
             <td>
                 <form method="POST" action="supprimerOffer.php">
-                    <button class="btn btn-primary" name="submit" type="submit">Supprimer</button>
+                    <button class="btn btn-primary" name="submit" type="submit">Delete</button>
                     <input type="hidden" value=<?PHP echo $offer['id_offer']; ?> name="id_offer">
                 </form>
             </td>

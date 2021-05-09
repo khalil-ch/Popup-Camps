@@ -50,6 +50,7 @@ if (isset($_POST["id_offer"]) &&
     <meta name="author" content="">
 
 
+
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -159,7 +160,7 @@ if (isset($_POST["id_offer"]) &&
                     <option value="">--Please choose an option--</option>
                     <option value="Earth Day">Earth Day</option>
                     <option value="Mothers Day">Mothers Day</option>
-                    <option value="LGBTQIA+ Day">LGBTQ++ Day</option>
+                    <option value="LGBTQ++ Day">LGBTQ++ Day</option>
                     <option value="Lovers Day">Lovers Day</option>
                     <option value="Animal's Day">Animal's Day</option>
                     <option value="goldfish Day">goldfish Day</option>

@@ -1,53 +1,113 @@
 <?php
 include "../Controller/offer1.php";
 include_once '../Model/offer.php';
-
+include "../Views/includes/header.php";
+include "../Views/includes/leftbar.php";
 session_start();
 $offer1 = new offer1();
 $error = "";
 
 
 
-if  (  isset($_POST["id_offer"]) &&   !empty($_POST["id_offer"]) &&
-    isset($_POST["name_offer"]) && !empty($_POST["name_offer"]) &&
-    isset($_POST["type_offer"]) && !empty($_POST["type_offer"]) &&
-    isset($_POST["date_offer"]) && !empty($_POST["date_offer"]) &&
-    isset($_POST["duree_offer"]) && !empty($_POST["duree_offer"]) ){
-// On nettoie les données envoyées
-$id_offer = strip_tags($_POST['id_offer']);
-$nom_offer = strip_tags($_POST['nom_offer']);
-$type_offer = strip_tags($_POST['type_offer']);
-$date_offer = strip_tags($_POST['date_offer']);
-$duree_offer = strip_tags($_POST['duree_offer']);
+if (
+    isset($_POST["id_offer"]) &&
+    isset($_POST["nom_offer"]) &&
+    isset($_POST["type_offer"]) &&
+    isset($_POST["date_offer"]) &&
+    isset($_POST["duree_offer"])
+) {
+    if (
+        !empty($_POST["id_offer"]) &&
+        !empty($_POST["nom_offer"]) &&
+        !empty($_POST["type_offer"]) &&
+        !empty($_POST["date_offer"]) &&
+        !empty($_POST["duree_offer"])
+    ) {
+        $offer = new offer(
+            $_POST['id_offer'],
+            $_POST['nom_offer'],
+            $_POST['type_offer'],
+            $_POST['date_offer'],
+            $_POST['duree_offer']
+        );
 
-$sql = 'UPDATE offer SET nom_offer=:nom_offer, type_offer=:type_offer, date_offer=:date_offer , duree_offer=:duree_offer WHERE id_offer=:id_offer;';
+        $offer1->modifierOffer($offer, $_GET['id_offer']);
 
-$query = $db->prepare($sql);
-
-$query->bindValue(':id_offer', $id_offer, PDO::PARAM_INT);
-$query->bindValue(':nom_offer', $nom_offer, PDO::PARAM_STR);
-$query->bindValue(':type_offer', $type_offer, PDO::PARAM_STR);
-$query->bindValue(':date_offeer', $date_offer, PDO::PARAM_STR);
-$query->bindValue(':duree_offer', $duree_offer, PDO::PARAM_INT);
-
-$query->execute();
-
-    $offer1->modifierOffer($offer, $_GET['id_offer']);
-    header('refresh:5;url=afficherOffer.php');
-$_SESSION['message'] = "Produit modifié";}
-else  ( $error = "Missing information" );
+    }
+    else
+        $error = "Missing information";
+}
 
 ?>
 
 <html>
 <head>
-    <title>Modifier offer</title>
+    <title>Edit Promotions</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#3e454c">
+
+    <title>Edit Promotion</title>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Sandstone Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap Datatables -->
+    <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+    <!-- Bootstrap social button library -->
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <!-- Bootstrap select -->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- Bootstrap file input -->
+    <link rel="stylesheet" href="css/fileinput.min.css">
+    <!-- Awesome Bootstrap checkbox -->
+    <link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+    <!-- Admin Stye -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type= "text/javascript" src="../vendor/countries.js"></script>
+    <style>
+        .errorWrap {
+            padding: 10px;
+            margin: 0 0 20px 0;
+            background: #dd3d36;
+            color:#fff;
+            -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+        }
+        .succWrap{
+            padding: 10px;
+            margin: 0 0 20px 0;
+            background: #5cb85c;
+            color:#fff;
+            -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+        }
+    </style>
 </head>
 <body>
-<button><a href="afficherOffer.php">Retour à la liste</a></button>
+
+    		<?php include('includes/header.php');?>
+	<div class="ts-main-content">
+	<?php include('includes/leftbar.php');?>
+	<div class="ts-main-content">
+	<?php include('includes/leftbar.php');?>
+	<div class="content-wrapper">
+		<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">Edit The Offers</div>
+									<form method="post" class="form-horizontal" enctype="multipart/form-data" name="imgform">
+                              <div class="form-group">
+
+
+<button><a class="form-control" href="afficherOffer.php">*   Back to The Main List</a></button>
 <hr>
 
 <div id_offer="error">
@@ -62,31 +122,34 @@ if (isset($_GET['id_offer'])){
     <form action="" method="POST">
         <table align="center" border="1">
             <tr>
-                <td rowspan='5' colspan='1'>Fiche offer</td>
+                <td rowspan='5' colspan='1'>** Offer List</td>
                 <td>
-                    <label for="id_offer">id_offer:
+                    <label class="col-sm-2 control-label" for="id_offer">ID:<span style="color:red">*</span>
                     </label>
+                     <div class="col-sm-4">
                 </td>
-                <td><input type="number" name="id_offer" id_offer="id_offer" maxlength="20"></td>
+                <td><input type="number" name="id_offer" id_offer="id_offer" class="form-control" maxlength="20"></td>
             </tr>
             <tr>
                 <td>
-                    <label for="nom_offer">Nom d'offre:</label>
+                    <label class="col-sm-2 control-label" for="nom_offer">Offer Name:<span style="color:red">*</span></label>
+                <div class="col-sm-4">
                 </td>
                 <td>
-                    <input type="text" name="nom_offer" id_offer="nom_offer" maxlength="30">
+                    <input type="text" name="nom_offer" id_offer="nom_offer" class="form-control" maxlength="30">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="type_offer">Choose offer:</label>
+                    <label class="col-sm-2 control-label" for="type_offer">Choose offer:<span style="color:red">*</span></label>
+        <div class="col-sm-4">
                 </td>
                 <td>
                     <select name="type_offer" id="type_offer">
                         <option value="">--Please choose an option--</option>
                         <option value="Earth Day">Earth Day</option>
                         <option value="Mothers Day">Mothers Day</option>
-                        <option value="LGBTQIA+ Day">LGBTQ++ Day</option>
+                        <option value="LGBTQ++ Day">LGBTQ++ Day</option>
                         <option value="Lovers Day">Lovers Day</option>
                         <option value="Animal's Day">Animal's Day</option>
                         <option value="goldfish Day">goldfish Day</option>
@@ -96,31 +159,33 @@ if (isset($_GET['id_offer'])){
             </tr>
             <tr>
                 <td>
-                    <label for="date_offer">Date d'offre:
+                    <label  class="col-sm-2 control-label" for="date_offer">Offer Date:<span style="color:red">*</span>
                     </label>
+                <div class="col-sm-4">
                 </td>
                 <td>
-                    <input type="date" id_offer="date_offer" name="date_offer"
+                    <input type="date" id_offer="date_offer"class="form-control" name="date_offer"
                            value="year-month-day"
                            min="2021-01-01" max="2027-12-31">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="duree_offer">duree d'offer:</label>
+                    <label class="col-sm-2 control-label" for="duree_offer">Duration:<span style="color:red">*</span></label>
+                 <div class="col-sm-4">
                 </td>
                 <td>
-                    <input type="number" name="duree_offer" id_offer="duree_offer" maxlength="30">
+                    <input type="number" name="duree_offer" id_offer="duree_offer"class="form-control" maxlength="30">
                 </td>
             </tr>
 
             <tr>
                 <td></td>
                 <td>
-                    <input type="submit" value="Envoyer">
+                    <input class="form-control" type="submit" value="Envoyer">
                 </td>
                 <td>
-                    <input type="reset" value="Annuler" >
+                    <input class="form-control" type="reset" value="Annuler" >
                 </td>
             </tr>
         </table>

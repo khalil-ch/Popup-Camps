@@ -41,41 +41,40 @@
 
                 </li>
                 </li>
-                <a href="feedback.php" class="dropdown-toggle no-arrow">
-                    <span class="micon dw dw-invoice"></span><span class="mtext">feedback</span>
-                </a>
+                <a href="about.php" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-invoice"></span><span class="mtext">Explore Offers</span>
+
                 </li>
 
 
                 </li>
                 </li>
-                <a href="notification.php" class="dropdown-toggle no-arrow">
-                    <span class="micon dw dw-invoice"></span><span class="mtext">notifications</span>
+                <a href="trips.php" class="dropdown-toggle no-arrow">
+                    <span class="micon dw dw-invoice"></span><span class="mtext">Explore Promotions</span>
                 </a>
                 </li>
                 </li>
 
                 <a href="download.php" class="dropdown-toggle no-arrow">
-                    <span class="micon dw dw-invoice"></span><span class="mtext">download users</span>
+                    <span class="micon dw dw-invoice"></span><span class="mtext">Export Excel Promo</span>
                 </a>
                 </li>
                 </li>
                 <a href="pdf.php" class="dropdown-toggle no-arrow">
-                    <span class="micon dw dw-invoice"></span><span class="mtext">extract pdf</span>
+                    <span class="micon dw dw-invoice"></span><span class="mtext">PDF list of offers </span>
                 </a>
                 </li>
                 </li>
                 </li>
-                <a href="downloademployees.php" class="dropdown-toggle no-arrow">
-                    <span class="micon dw dw-invoice"></span><span class="mtext">download employees</span>
+
+                    <a href="pie.php" class="dropdown-toggle no-arrow">
+                        <span class="micon dw dw-invoice"></span><span class="mtext">Stats of offers</span>
+                    </a>
                 </a>
                 </li>
                 </li>
                 </li>
-                <a href="pie.php" class="dropdown-toggle no-arrow">
-                    <span class="micon dw dw-invoice"></span><span class="mtext">charts</span>
-                </a>
-                </li>
+
 
 
             </ul>

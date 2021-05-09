@@ -1,6 +1,8 @@
 <?php
 include "../Controller/promo1.php";
 include_once '../Model/promo.php';
+include "../Views/includes/header.php";
+include "../Views/includes/leftbar.php";
 
 session_start();
 $promo1 = new promo1();
@@ -8,42 +10,104 @@ $error = "";
 
 
 
-if  (  isset($_POST["id_promo"]) &&   !empty($_POST["id_promo"]) &&
-    isset($_POST["name_promo"]) && !empty($_POST["name_promo"]) &&
-    isset($_POST["type_promo"]) && !empty($_POST["type_promo"]) &&
-    isset($_POST["duree_promo"]) && !empty($_POST["duree_promo"]) ){
-// On nettoie les données envoyées
-    $id_promo = strip_tags($_POST['id_promo']);
-    $nom_promo = strip_tags($_POST['nom_promo']);
-    $type_promo = strip_tags($_POST['type_promo']);
-    $duree_promo = strip_tags($_POST['duree_promo']);
+if (
+    isset($_POST["id_promo"]) &&
+    isset($_POST["nom_promo"]) &&
+    isset($_POST["type_promo"]) &&
+    isset($_POST["duree_promo"])
+) {
+    if (
+        !empty($_POST["id_promo"]) &&
+        !empty($_POST["nom_promo"]) &&
+        !empty($_POST["type_promo"]) &&
+        !empty($_POST["duree_promo"])
+    ) {
 
-    $sql = 'UPDATE promo SET nom_promo=:nom_promo, type_promo=:type_promo , duree_promo=:duree_promo WHERE id_promo=:id_promo;';
+        $promo = new promo(
+            $_POST['id_promo'],
+            $_POST['nom_promo'],
+            $_POST['type_promo'],
+            $_POST['duree_promo']
+        );
 
-    $query = $db->prepare($sql);
+        $promo1->modifierPromo($promo, $_GET['id_promo']);
 
-    $query->bindValue(':id_promo', $id_promo, PDO::PARAM_INT);
-    $query->bindValue(':nom_promo', $nom_promo, PDO::PARAM_STR);
-    $query->bindValue(':type_promo', $type_promo, PDO::PARAM_STR);
-    $query->bindValue(':duree_promo', $duree_promo, PDO::PARAM_INT);
-
-    $query->execute();
-
-    $offer1->modifierPromo($promo, $_GET['id_promo']);
-    header('refresh:5;url=afficherPromo.php');
-    $_SESSION['message'] = "Produit modifié";}
-else  ( $error = "Missing information" );
-
+    }
+    else
+        $error = "Missing information";
+}
 ?>
     <html>
     <head>
-        <title>Modifier Produit</title>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style/style.css">
-    </head>
+        <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="theme-color" content="#3e454c">
+
+	<title>Edit Promotion</title>
+
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Sandstone Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- Bootstrap Datatables -->
+	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+	<!-- Bootstrap social button library -->
+	<link rel="stylesheet" href="css/bootstrap-social.css">
+	<!-- Bootstrap select -->
+	<link rel="stylesheet" href="css/bootstrap-select.css">
+	<!-- Bootstrap file input -->
+	<link rel="stylesheet" href="css/fileinput.min.css">
+	<!-- Awesome Bootstrap checkbox -->
+	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+	<!-- Admin Stye -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<script type= "text/javascript" src="../vendor/countries.js"></script>
+	<style>
+.errorWrap {
+    padding: 10px;
+    margin: 0 0 20px 0;
+	background: #dd3d36;
+	color:#fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+.succWrap{
+    padding: 10px;
+    margin: 0 0 20px 0;
+	background: #5cb85c;
+	color:#fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+		</style>
+</head>
+
+
+
 <body>
-    <button><a href="afficherPromo.php">Retour à la liste</a></button>
+
+    		<?php include('includes/header.php');?>
+	<div class="ts-main-content">
+	<?php include('includes/leftbar.php');?>
+	<div class="ts-main-content">
+	<?php include('includes/leftbar.php');?>
+	<div class="content-wrapper">
+		<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">Edit The Promotions</div>
+									<form method="post" class="form-horizontal" enctype="multipart/form-data" name="imgform">
+                              <div class="form-group">
+    <button><a class="form-control" href="afficherPromo.php">Back To The Main List</a></button>
     <hr>
 
     <div id_offer="error">
@@ -58,24 +122,27 @@ if (isset($_GET['id_promo'])){
     <form action="" method="POST">
         <table align="center" border="1">
             <tr>
-                <td rowspan='5' colspan='1'>Fiche offer</td>
+                <td rowspan='5' colspan='1' >** Promotion details</td>
                 <td>
-                    <label for="id_promo">id_offer:
+                    <label class="col-sm-2 control-label" for="id_promo">ID:<span style="color:red">*</span>
                     </label>
+                    <div class="col-sm-4">
                 </td>
-                <td><input type="number" name="id_promo" id_offer="id_promo" maxlength="20"></td>
+                <td><input type="number" name="id_promo" id_offer="id_promo" class="form-control"  maxlength="20"></td>
             </tr>
             <tr>
                 <td>
-                    <label for="nom_promo">Nom de Promo:</label>
+                    <label class="col-sm-2 control-label" for="nom_promo">Promotion Name:<span style="color:red">*</span></label>
+                 <div class="col-sm-4">
                 </td>
                 <td>
-                    <input type="text" name="nom_promo" id_promo="nom_promo" maxlength="30">
+                    <input type="text" name="nom_promo" id_promo="nom_promo" class="form-control"maxlength="30">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="type_promo">Choose Promo:</label>
+                    <label class="col-sm-2 control-label"  for="type_promo">Promotions Type:<span style="color:red">*</span></label>
+                   <div class="col-sm-4">
                 </td>
                 <td>
                     <select name="type_promo" id="type_promo">
@@ -92,20 +159,21 @@ if (isset($_GET['id_promo'])){
             </tr>
             <tr>
                 <td>
-                    <label for="duree_promo">duree de promotion:</label>
+                    <label class="col-sm-2 control-label" for="duree_promo">duree de promotion:<span style="color:red">*</span></label>
+                <div class="col-sm-4">
                 </td>
                 <td>
-                    <input type="number" name="duree_promo" id_promo="duree_promo" maxlength="30">
+                    <input type="number" name="duree_promo" id_promo="duree_promo" class="form-control" maxlength="30">
                 </td>
             </tr>
 
             <tr>
                 <td></td>
                 <td>
-                    <input type="submit" value="Envoyer">
+                    <input class="form-control" type="submit" value="Envoyer">
                 </td>
                 <td>
-                    <input type="reset" value="Annuler" >
+                    <input class="form-control" type="reset" value="Annuler" >
                 </td>
             </tr>
         </table>

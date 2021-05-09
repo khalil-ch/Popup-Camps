@@ -64,9 +64,9 @@ class promo1
             );
             $query->execute([
                 'id_promo' => $id_promo,
-                'nom_promo' => $promo->__getNomP($nom_promo),
-                'type_promo' => $promo->__getTypeP($type_promo) ,
-                'duree_promo' => $promo->__getDureeP($duree_promo)
+                'nom_promo' => $promo->__getNomP(),
+                'type_promo' => $promo->__getTypeP() ,
+                'duree_promo' => $promo->__getDureeP()
             ]);
             echo $query->rowCount() . " records UPDATED successfully <br>";
         } catch (PDOException $e) {

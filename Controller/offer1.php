@@ -66,10 +66,10 @@ class offer1
             );
             $query->execute([
                 'id_offer' => $id_offer,
-                'nom_offer' => $offer->__getNom($nom_offer),
-                'type_offer' => $offer->__getType($type_offer) ,
-                'date_offer' => $offer->__getDate($date_offer),
-                'duree_offer' => $offer->__getDuree($duree_offer)
+                'nom_offer' => $offer->__getNom(),
+                'type_offer' => $offer->__getType() ,
+                'date_offer' => $offer->__getDate(),
+                'duree_offer' => $offer->__getDuree()
             ]);
             echo $query->rowCount() . " records UPDATED successfully <br>";
         } catch (PDOException $e) {
