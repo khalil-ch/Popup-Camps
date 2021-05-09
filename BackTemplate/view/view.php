@@ -12,19 +12,19 @@ $review = null;
 // create an instance of the controller
 $reviewC = new ReviewC();
 if (
-    isset($_POST["note"]) &&
+    isset($_POST["rating"]) &&
     isset($_POST["user"]) && 
     isset($_POST["comment"])
 ) {
     if (
-        !empty($_POST["note"]) && 
+        !empty($_POST["rating"]) && 
         !empty($_POST["user"]) && 
         !empty($_POST["comment"])
     ) {
         $review = new Review(
             0,
                 $_GET['nomCampRv'],
-                $_POST['note'], 
+                $_POST['rating'], 
                 $_POST['user'],
                 $_POST['comment'],
         );
@@ -61,6 +61,7 @@ if (
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+	<link rel="stylesheet" type="text/css" href="starability/starability-minified/starability-all.min.css"/>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -639,7 +640,13 @@ if (
 						<tr>
 							<td><?php echo $review['idReview']; ?></td>
 							<td><?php echo $review['NomCampRv']; ?></td>
-							<td><?php echo $review['note']; ?></td>
+							<!-- <td><?php echo $review['note']; ?></td> -->
+							<td>
+							<!-- The result is based on the 'data-rating' value. Change the value to see the different static rating. -->
+							<p class="starability-result" data-rating="<?php echo $review['note'];?>">
+								Rated: 3 stars
+							</p>
+							</td>
 							<td><?php echo $review['user']; ?></td>
 							<td><?php echo $review['comment']; ?></td>
 							<td>
@@ -660,9 +667,30 @@ if (
 			</div>
             <form action="" method="POST">
 						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label" for="note">note:</label>
+							<label class="col-sm-12 col-md-2 col-form-label" for="rating">note:</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="note" type="number" name="note" id="note" maxlength="2">
+								<!-- <input class="form-control" placeholder="note" type="number" name="note" id="note" maxlength="2"> -->
+								<fieldset class="starability-heartbeat">
+								<legend>Star rating:</legend>
+								<input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+
+								<input type="radio" id="rate1" name="rating" value="1" />
+								<label for="rate1">1 star.</label>
+
+								<input type="radio" id="rate2" name="rating" value="2" />
+								<label for="rate2">2 stars.</label>
+
+								<input type="radio" id="rate3" name="rating" value="3" />
+								<label for="rate3">3 stars.</label>
+
+								<input type="radio" id="rate4" name="rating" value="4" />
+								<label for="rate4">4 stars.</label>
+
+								<input type="radio" id="rate5" name="rating" value="5" />
+								<label for="rate5">5 stars.</label>
+
+								<span class="starability-focus-ring"></span>
+								</fieldset>
 							</div>
 						</div>
 						<div class="form-group row">
