@@ -61,13 +61,16 @@ if (
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-	<link rel="stylesheet" type="text/css" href="starability/starability-minified/starability-all.min.css"/>
+	<link rel="stylesheet" type="text/css" href="starability/starability-minified/starability-all.min.css" />
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
@@ -594,34 +597,35 @@ if (
 				</div>
 			</div>
 			<!-- Table des donnees -->
-			
+
 			<a href="../Views/ajouterCampground.php">Ajouter un Campground</a>
 			<div class="card-box mb-30">
 				<h2 class="h4 pd-20">Comments</h2>
-				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript">
-      $("#btnPrint").live("click", function () {
-        var divContents = $("#data").html();
-        var printWindow = window.open('', '', 'height=400,width=800');
-        printWindow.document.write('<html><head><title>DIV Contents</title>');
-        printWindow.document.write('</head><body >');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-      });
-    </script>
-    <form id="form1">
-      <div id="">
-        This content needs to be printed.
-      </div>
-      <input type="button" value="Print Div Contents" id="btnPrint" />
-    </form>
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+				</script>
+				<script type="text/javascript">
+					$("#btnPrint").live("click", function () {
+						var divContents = $("#data").html();
+						var printWindow = window.open('', '', 'height=400,width=800');
+						printWindow.document.write('<html><head><title>DIV Contents</title>');
+						printWindow.document.write('</head><body >');
+						printWindow.document.write(divContents);
+						printWindow.document.write('</body></html>');
+						printWindow.document.close();
+						printWindow.print();
+					});
+				</script>
+				<form id="form1">
+					<div id="">
+						This content needs to be printed.
+					</div>
+					<input type="button" value="Print Div Contents" id="btnPrint" />
+				</form>
 				<h2 class="h4 pd-20">Best Selling Products</h2>
-                <h1>
-     <?php $var= $_GET['nomCampRv'];
+				<h1>
+					<?php $var= $_GET['nomCampRv'];
      echo $var;?>
-     </h1>
+				</h1>
 				<table class="data-table table nowrap">
 					<thead>
 						<tr>
@@ -634,7 +638,7 @@ if (
 						</tr>
 					</thead>
 					<tbody>
-					<?php
+						<?php
 				foreach($listReviews as $review){
 					?>
 						<tr>
@@ -642,74 +646,76 @@ if (
 							<td><?php echo $review['NomCampRv']; ?></td>
 							<!-- <td><?php echo $review['note']; ?></td> -->
 							<td>
-							<!-- The result is based on the 'data-rating' value. Change the value to see the different static rating. -->
-							<p class="starability-result" data-rating="<?php echo $review['note'];?>">
-								Rated: 3 stars
-							</p>
+								<!-- The result is based on the 'data-rating' value. Change the value to see the different static rating. -->
+								<p class="starability-result" data-rating="<?php echo $review['note'];?>">
+									Rated: 3 stars
+								</p>
 							</td>
 							<td><?php echo $review['user']; ?></td>
 							<td><?php echo $review['comment']; ?></td>
 							<td>
 								<form method="POST" action="../Views/supprimerReview.php">
-								<button type="submit">Supprimer</button>
-								<input type="hidden" value=<?PHP echo $review['idReview']; ?> name="id">
+									<button type="submit">Supprimer</button>
+									<input type="hidden" value=<?PHP echo $review['idReview']; ?> name="id">
 								</form>
 							</td>
 							<td>
 								<a href="#"> Modifier </a>
 							</td>
 						</tr>
-					<?php
+						<?php
 						}
 					?>
 					</tbody>
 				</table>
 			</div>
-            <form action="" method="POST">
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label" for="rating">note:</label>
-							<div class="col-sm-12 col-md-10">
-								<!-- <input class="form-control" placeholder="note" type="number" name="note" id="note" maxlength="2"> -->
-								<fieldset class="starability-heartbeat">
-								<legend>Star rating:</legend>
-								<input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+			<form action="" method="POST">
+				<div class="form-group row">
+					<label class="col-sm-12 col-md-2 col-form-label" for="rating">note:</label>
+					<div class="col-sm-12 col-md-10">
+						<!-- <input class="form-control" placeholder="note" type="number" name="note" id="note" maxlength="2"> -->
+						<fieldset class="starability-heartbeat">
+							<legend>Star rating:</legend>
+							<input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked
+								aria-label="No rating." />
 
-								<input type="radio" id="rate1" name="rating" value="1" />
-								<label for="rate1">1 star.</label>
+							<input type="radio" id="rate1" name="rating" value="1" />
+							<label for="rate1">1 star.</label>
 
-								<input type="radio" id="rate2" name="rating" value="2" />
-								<label for="rate2">2 stars.</label>
+							<input type="radio" id="rate2" name="rating" value="2" />
+							<label for="rate2">2 stars.</label>
 
-								<input type="radio" id="rate3" name="rating" value="3" />
-								<label for="rate3">3 stars.</label>
+							<input type="radio" id="rate3" name="rating" value="3" />
+							<label for="rate3">3 stars.</label>
 
-								<input type="radio" id="rate4" name="rating" value="4" />
-								<label for="rate4">4 stars.</label>
+							<input type="radio" id="rate4" name="rating" value="4" />
+							<label for="rate4">4 stars.</label>
 
-								<input type="radio" id="rate5" name="rating" value="5" />
-								<label for="rate5">5 stars.</label>
+							<input type="radio" id="rate5" name="rating" value="5" />
+							<label for="rate5">5 stars.</label>
 
-								<span class="starability-focus-ring"></span>
-								</fieldset>
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label"  for="user">User:</label>
-							<div class="col-sm-12 col-md-10">
-								<input class="form-control" placeholder="Search Here" type="text" name="user" id="user" maxlength="30">
-							</div>
-						</div>
-						<div class="form-group row">
-							<label class="col-sm-12 col-md-2 col-form-label" for="comment">Comment:</label>
-							<div class="col-sm-12 col-md-10">
-                            <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
-							</div>
-						</div>
-						<div class="form-group row">
-							<button class="btn btn-primary col-6" type="submit">Submit</button>
-							<button class="btn btn-danger col-6" type="reset">Cancel</button>
-						</div>
-					</form>
+							<span class="starability-focus-ring"></span>
+						</fieldset>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-12 col-md-2 col-form-label" for="user">User:</label>
+					<div class="col-sm-12 col-md-10">
+						<input class="form-control" placeholder="Search Here" type="text" name="user" id="user"
+							maxlength="30">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label class="col-sm-12 col-md-2 col-form-label" for="comment">Comment:</label>
+					<div class="col-sm-12 col-md-10">
+						<textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<button class="btn btn-primary col-6" type="submit">Submit</button>
+					<button class="btn btn-danger col-6" type="reset">Cancel</button>
+				</div>
+			</form>
 			<div class="footer-wrap pd-20 mb-20 card-box">
 				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit
 					Hingarajiya</a>

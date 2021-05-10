@@ -73,7 +73,10 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
@@ -606,7 +609,8 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<input type="submit" name="envoyer" id="envoyer" class="btn btn-info" value="evoyer" onclick="verif();">
+							<input type="submit" name="envoyer" id="envoyer" class="btn btn-info" value="evoyer"
+								onclick="verif();">
 							<button class="btn-success col-6" type="submit" onclick="verif();">Submit</button>
 							<button class="btn-danger col-6" type="reset">Cancel</button>
 						</div>

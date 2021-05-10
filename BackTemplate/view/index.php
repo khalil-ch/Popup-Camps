@@ -45,7 +45,10 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
@@ -74,7 +77,8 @@
 				<form method="" action="index.php?Camp=<?PHP echo $_POST['Recherche']; ?>">
 					<div class="form-group mb-0">
 						<i class="dw dw-search2 search-icon"></i>
-						<input type="text" class="form-control search-input" placeholder="Search Here" name="Recherche" id="Recherche">
+						<input type="text" class="form-control search-input" placeholder="Search Here" name="Recherche"
+							id="Recherche">
 						<div class="dropdown">
 							<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
 								<i class="ion-arrow-down-c"></i>
@@ -554,7 +558,8 @@
 				</div>
 			</div>
 			<!-- Table des donnees -->
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores doloribus officia iste. Dolores.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores
+				doloribus officia iste. Dolores.</p>
 			<a href="../view/form-basic.php">Ajouter un Campground</a>
 			<div class="card-box mb-30">
 				<h2 class="h4 pd-20">Best Selling Products</h2>
@@ -573,7 +578,7 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php
+						<?php
 						foreach($listCamps as $Camp){
 					?>
 						<tr>
@@ -587,7 +592,8 @@
 								<h5 class="font-16"><?php echo $Camp['prix']; ?></h5>
 							</td>
 							<td><?php echo $Camp['emplacement']; ?></td>
-							<td style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><?php echo $Camp['description']; ?></td>
+							<td style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
+								<?php echo $Camp['description']; ?></td>
 							<td><?php echo $Camp['duree']; ?></td>
 							<td><?php echo $Camp['proprietaire']; ?></td>
 							<td>
@@ -597,13 +603,18 @@
 										<i class="dw dw-more"></i>
 									</a>
 									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-										<a class="dropdown-item" href="view.php?nomCampRv=<?PHP echo $Camp['NomCamp']; ?>"><i class="dw dw-eye"></i> View</a>
-										<a class="dropdown-item" href="advanced-components.php?idProduit=<?PHP echo $Camp['idProduit']; ?>"><i class="dw dw-edit2"></i> Edit</a>
-										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> 								
-										<form method="POST" action="../Views/supprimerCampground.php">
-										<button type="submit">Supprimer</button>
-										<input type="hidden" value=<?PHP echo $Camp['idProduit']; ?> name="id">
-								</form></a>
+										<a class="dropdown-item"
+											href="view.php?nomCampRv=<?PHP echo $Camp['NomCamp']; ?>"><i
+												class="dw dw-eye"></i> View</a>
+										<a class="dropdown-item"
+											href="advanced-components.php?idProduit=<?PHP echo $Camp['idProduit']; ?>"><i
+												class="dw dw-edit2"></i> Edit</a>
+										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
+											<form method="POST" action="../Views/supprimerCampground.php">
+												<button type="submit">Supprimer</button>
+												<input type="hidden" value=<?PHP echo $Camp['idProduit']; ?> name="id">
+											</form>
+										</a>
 									</div>
 								</div>
 							</td>
@@ -613,25 +624,26 @@
 					?>
 					</tbody>
 				</table>
-				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script type="text/javascript">
-      $("#btnPrint").live("click", function () {
-        var divContents = $("#data").html();
-        var printWindow = window.open('', '', 'height=400,width=800');
-        printWindow.document.write('<html><head><title>DIV Contents</title>');
-        printWindow.document.write('</head><body >');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-      });
-    </script>
-    <form id="form1">
-      <div id="">
-        This content needs to be printed.
-      </div>
-      <input type="button" value="Print Div Contents" id="btnPrint" />
-    </form>
+				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+				</script>
+				<script type="text/javascript">
+					$("#btnPrint").live("click", function () {
+						var divContents = $("#data").html();
+						var printWindow = window.open('', '', 'height=400,width=800');
+						printWindow.document.write('<html><head><title>DIV Contents</title>');
+						printWindow.document.write('</head><body >');
+						printWindow.document.write(divContents);
+						printWindow.document.write('</body></html>');
+						printWindow.document.close();
+						printWindow.print();
+					});
+				</script>
+				<form id="form1">
+					<div id="">
+						This content needs to be printed.
+					</div>
+					<input type="button" value="Print Div Contents" id="btnPrint" />
+				</form>
 				<h2 class="h4 pd-20">Best Selling Products</h2>
 				<table class="data-table table nowrap">
 					<thead>
@@ -645,7 +657,7 @@
 						</tr>
 					</thead>
 					<tbody>
-					<?php
+						<?php
 				foreach($listReviews as $review){
 					?>
 						<tr>
@@ -656,15 +668,16 @@
 							<td><?php echo $review['comment']; ?></td>
 							<td>
 								<form method="POST" action="supprimerReview.php">
-								<button type="submit">Supprimer</button>
-								<input type="hidden" value=<?PHP echo $review['idReview']; ?> name="id">
+									<button type="submit">Supprimer</button>
+									<input type="hidden" value=<?PHP echo $review['idReview']; ?> name="id">
 								</form>
 							</td>
 							<td>
-								<a href="../Views/modifierReview.php?idReview=<?PHP echo $review['idReview']; ?>"> Modifier </a>
+								<a href="../Views/modifierReview.php?idReview=<?PHP echo $review['idReview']; ?>">
+									Modifier </a>
 							</td>
 						</tr>
-					<?php
+						<?php
 						}
 					?>
 					</tbody>
