@@ -86,6 +86,32 @@
 				die('Erreur: '.$e->getMessage());
 			}
 		}
+		function compterReview($name){
+			try{
+				$db = config::getConnexion();/*
+				$query = $db->prepare(
+					'SELECT COUNT(NomCampRV) FROM Reviews WHERE NomCampRv = 'Wood House''
+				);*//*
+				$query->execute([
+					'NomCampRv' => $name
+				]);*/
+				// 'mysql:host=localhost;dbname=PopupCamps', 'root', ''
+				$servername = "localhost";
+				$username = "root";
+				$password = "";
+				$dbname = "PopupCamps";
+				$con = mysqli_connect($servername,$username,$password,$dbname);
+				$sql = "SELECT COUNT(NomCampRV) FROM Reviews WHERE NomCampRv = '$name'";
+				$result = mysqli_query($con,$sql);
+				$values = mysqli_fetch_assoc($result);
+				//$num_rows=$values['NomCampRV'];
+				return $values;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+	
+		}
 		function selectReview($name){
 			try{
 				$db = config::getConnexion();
@@ -101,8 +127,6 @@
 			catch (Exception $e){
 				die('Erreur: '.$e->getMessage());
 			}	
-		}
-		
+		}	
 	}
-
 ?>

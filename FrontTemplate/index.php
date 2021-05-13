@@ -127,9 +127,9 @@
     </div>
 
     <div class="site-section">
-<!-- Campground Components -->
-<!-- Campground Components -->
-<!-- Campground Components -->
+      <!-- Campground Components -->
+      <!-- Campground Components -->
+      <!-- Campground Components -->
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-md-7">
@@ -141,22 +141,23 @@
           </div>
         </div>
         <div class="row">
-        <?php
+          <?php
 						foreach($listCamps as $Camp){
 					?>
-            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-              <?php $path = $Camp['imageCamp'];?>
-              <img src="<?php echo $path;?>" alt="" class="img-fluid">
+                <?php $path = $Camp['imageCamp'];?>
+                <img src="<?php echo $path;?>" alt="" class="img-fluid">
               </div>
               <div class="listing-item-content">
-                <a class="px-3 mb-3 category bg-primary" href="trips.php?nomCampRv=<?PHP echo $Camp['NomCamp']; ?>">$<?php echo $Camp['prix']; ?></a>
+                <a class="px-3 mb-3 category bg-primary"
+                  href="trips.php?nomCampRv=<?PHP echo $Camp['NomCamp']; ?>">$<?php echo $Camp['prix']; ?></a>
                 <h2 class="mb-1"><a href="trip-single.html"><?php echo $Camp['NomCamp']; ?></a></h2>
               </div>
             </div>
           </div>
-          						<?php
+          <?php
 						}
 					?>
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
@@ -535,7 +536,9 @@
               <p>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+                <script>
+                  document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made
                 with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
                   target="_blank">Colorlib</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

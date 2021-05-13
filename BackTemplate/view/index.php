@@ -8,7 +8,7 @@
 		$listCamps=$campgroundC->rechercherCamp($_GET['Recherche']);
 	}
 	else{
-		$listCamps=$campgroundC->afficherCampgrounds();
+	$listCamps=$campgroundC->afficherCampgrounds();
 	$reviewC=new ReviewC();
 	$listReviews=$reviewC->afficherReview();
 	}
