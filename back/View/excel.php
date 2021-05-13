@@ -31,10 +31,10 @@ foreach($results as $result)
 echo '  
 <tr>  
 <td>'.$cnt.'</td> 
-<td>'.$Name= $result->id_commande.'</td> 
-<td>'.$Email= $result->date_commande.'</td> 
-<td>'.$Gender= $result->montant_commande.'</td> 
-<td>'.$Phone= $result->id_user.'</td> 					
+<td>'.$result->id_commande.'</td> 
+<td>'.$result->date_commande.'</td> 
+<td>'.$result->montant_commande.'</td> 
+<td>'.$result->id_user.'</td> 					
 </tr>  
 ';
 header("Content-type: application/octet-stream");

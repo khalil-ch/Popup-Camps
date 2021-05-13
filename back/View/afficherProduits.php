@@ -34,7 +34,7 @@
 		<tbody>
 		
 		<a target="_blank" href="ajouterProduit.php" class="btn btn-primary" style="margin-right:20px" target="_blank">Ajouter un produit</a>
-		<a target="_blank" href="editcategorie.php" class="btn btn-primary">Ajouter une Categorie</a>
+		<a target="_blank" href="ajouterCategorie.php" class="btn btn-primary">Ajouter une Categorie</a>
 		
 		<br>
 		<br>

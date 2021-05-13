@@ -104,10 +104,10 @@ include_once 'header.php';
    
       <!-- addCommande.php?commande=true -->
         <div>
-          <input type="submit" name="commander"  class="btn btn-primary" id="commander" value="commander" style="position:fixed; top:190px; right:400px">
+          <input type="submit" name="commander"  class="btn btn-primary" id="commander" value="commander" style="position:absolute; top:190px; right:400px">
 
   
-      <a href="produits.php" class="btn btn-success" style="position:fixed; top:200px; right:100px">Go back to produits</a>
+      <a href="produits.php" class="btn btn-success" style="position:absolute; top:200px; right:100px">Go back to produits</a>
         </div>
   </fieldset>
 </form>
