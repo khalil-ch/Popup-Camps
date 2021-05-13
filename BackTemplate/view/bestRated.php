@@ -24,9 +24,9 @@ $listOfCamps=$campgroundC->afficherCampgrounds();
 $i=0;
 foreach ($listOfCamps as $oneCamp) {
     //echo $oneCamp['NomCamp'];
-    $compteur=$reviewC->compterReview($oneCamp['NomCamp']);
-    $campsArray[$i++]=array("label"=> $oneCamp['NomCamp'], "y"=> $compteur['COUNT(NomCampRV)']);
-    //log_as_json2($compteur);
+    $compteur=$reviewC->moyReviews($oneCamp['NomCamp']);
+    $campsArray[$i++]=array("label"=> $oneCamp['NomCamp'], "y"=> $compteur['AVG(note)']);
+    log_as_json2($compteur);
     //echo $compteur['COUNT(NomCampRV)'];
 }
 $i=0;
@@ -62,14 +62,13 @@ $i=0;
         }
     </script>
 </head>
-
 <body>
-    </button>
+</button>
 
-    <!-- Modal -->
-    <div class="modal-body">
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- Modal -->
+      <div class="modal-body">
+      <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 
 </html>

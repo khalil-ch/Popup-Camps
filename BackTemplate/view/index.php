@@ -1,8 +1,9 @@
 <?PHP
-	include_once "../Controller/ReviewC.php";
+	include_once "/opt/lampp/htdocs/PopupCamps/BackTemplate/Controller/ReviewC.php";
 	include_once "../Controller/CampgroundC.php";
 
 	$campgroundC=new CampgroundC();
+	$reviewC= new ReviewC();
 
 	if (isset($_GET['Recherche'])) {
 		$listCamps=$campgroundC->rechercherCamp($_GET['Recherche']);
@@ -13,7 +14,29 @@
 	$listReviews=$reviewC->afficherReview();
 	}
 
-
+	function log_as_json2($vars)
+    {
+    if(is_resource($vars)) {
+        return;
+    }
+    else {
+        if($vars)
+        {
+            $json =  @json_encode($vars);
+            print "<script>console.log($json);</script>";
+        }
+    }
+    }
+?>
+<?php 
+$campsArray = array();
+$listOfCamps=$campgroundC->afficherCampgrounds();
+$i=0;
+foreach ($listOfCamps as $oneCamp) {
+    $compteur=$reviewC->compterReview($oneCamp['NomCamp']);
+    $campsArray[$i++]=array("label"=> $oneCamp['NomCamp'], "y"=> $compteur['COUNT(NomCampRV)']);
+}
+$i=0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,6 +63,8 @@
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -52,6 +77,33 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
+	</script>
+
+	<script>
+		// window.onload = function () {
+
+		// 	var chart = new CanvasJS.Chart("chartContainer", {
+		// 		animationEnabled: true,
+		// 		exportEnabled: true,
+		// 		title: {
+		// 			text: "Average Expense Per Day  in Thai Baht"
+		// 		},
+		// 		subtitles: [{
+		// 			text: "Currency Used: Thai Baht (฿)"
+		// 		}],
+		// 		data: [{
+		// 			type: "pie",
+		// 			showInLegend: "true",
+		// 			legendText: "{label}",
+		// 			indexLabelFontSize: 16,
+		// 			indexLabel: "{label} - #percent%",
+		// 			yValueFormatString: "฿#,##0",
+		// 			dataPoints: < ? php echo json_encode($campsArray, JSON_NUMERIC_CHECK); ? >
+		// 		}]
+		// 	});
+		// 	chart.render();
+
+		// }
 	</script>
 </head>
 
@@ -110,41 +162,6 @@
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="notification-list mx-h-350 customscroll">
 							<ul>
-								<li>
-									<a href="#">
-										<img src="vendors/images/img.jpg" alt="">
-										<h3>John Doe</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/photo1.jpg" alt="">
-										<h3>Lea R. Frith</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/photo2.jpg" alt="">
-										<h3>Erik L. Richards</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/photo3.jpg" alt="">
-										<h3>John Doe</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<img src="vendors/images/photo4.jpg" alt="">
-										<h3>Renee I. Hansen</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed...</p>
-									</a>
-								</li>
 								<li>
 									<a href="#">
 										<img src="vendors/images/img.jpg" alt="">
@@ -314,32 +331,6 @@
 							<li><a href="datatable.html">DataTables</a></li>
 						</ul>
 					</li>
-					<li>
-						<a href="calendar.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-calendar1"></span><span class="mtext">Calendar</span>
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-apartment"></span><span class="mtext"> UI Elements </span>
-						</a>
-						<ul class="submenu">
-							<li><a href="ui-buttons.html">Buttons</a></li>
-							<li><a href="ui-cards.html">Cards</a></li>
-							<li><a href="ui-cards-hover.html">Cards Hover</a></li>
-							<li><a href="ui-modals.html">Modals</a></li>
-							<li><a href="ui-tabs.html">Tabs</a></li>
-							<li><a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a></li>
-							<li><a href="ui-sweet-alert.html">Sweet Alert</a></li>
-							<li><a href="ui-notification.html">Notification</a></li>
-							<li><a href="ui-timeline.html">Timeline</a></li>
-							<li><a href="ui-progressbar.html">Progressbar</a></li>
-							<li><a href="ui-typography.html">Typography</a></li>
-							<li><a href="ui-list-group.html">List group</a></li>
-							<li><a href="ui-range-slider.html">Range slider</a></li>
-							<li><a href="ui-carousel.html">Carousel</a></li>
-						</ul>
-					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon dw dw-paint-brush"></span><span class="mtext">Icons</span>
@@ -351,120 +342,6 @@
 							<li><a href="themify.html">Themify Icons</a></li>
 							<li><a href="custom-icon.html">Custom Icons</a></li>
 						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-analytics-21"></span><span class="mtext">Charts</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="highchart.html">Highchart</a></li>
-							<li><a href="knob-chart.html">jQuery Knob</a></li>
-							<li><a href="jvectormap.html">jvectormap</a></li>
-							<li><a href="apexcharts.html">Apexcharts</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-right-arrow1"></span><span class="mtext">Additional Pages</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="video-player.html">Video Player</a></li>
-							<li><a href="login.html">Login</a></li>
-							<li><a href="forgot-password.html">Forgot Password</a></li>
-							<li><a href="reset-password.html">Reset Password</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-browser2"></span><span class="mtext">Error Pages</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="400.html">400</a></li>
-							<li><a href="403.html">403</a></li>
-							<li><a href="404.html">404</a></li>
-							<li><a href="500.html">500</a></li>
-							<li><a href="503.html">503</a></li>
-						</ul>
-					</li>
-
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-copy"></span><span class="mtext">Extra Pages</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="blank.html">Blank</a></li>
-							<li><a href="contact-directory.html">Contact Directory</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="blog-detail.html">Blog Detail</a></li>
-							<li><a href="product.html">Product</a></li>
-							<li><a href="product-detail.html">Product Detail</a></li>
-							<li><a href="faq.html">FAQ</a></li>
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="pricing-table.html">Pricing Tables</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-list3"></span><span class="mtext">Multi Level Menu</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="javascript:;">Level 1</a></li>
-							<li><a href="javascript:;">Level 1</a></li>
-							<li><a href="javascript:;">Level 1</a></li>
-							<li class="dropdown">
-								<a href="javascript:;" class="dropdown-toggle">
-									<span class="micon fa fa-plug"></span><span class="mtext">Level 2</span>
-								</a>
-								<ul class="submenu child">
-									<li><a href="javascript:;">Level 2</a></li>
-									<li><a href="javascript:;">Level 2</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:;">Level 1</a></li>
-							<li><a href="javascript:;">Level 1</a></li>
-							<li><a href="javascript:;">Level 1</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="sitemap.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-diagram"></span><span class="mtext">Sitemap</span>
-						</a>
-					</li>
-					<li>
-						<a href="chat.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-chat3"></span><span class="mtext">Chat</span>
-						</a>
-					</li>
-					<li>
-						<a href="invoice.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">Invoice</span>
-						</a>
-					</li>
-					<li>
-						<div class="dropdown-divider"></div>
-					</li>
-					<li>
-						<div class="sidebar-small-cap">Extra</div>
-					</li>
-					<li>
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit-2"></span><span class="mtext">Documentation</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="introduction.html">Introduction</a></li>
-							<li><a href="getting-started.html">Getting Started</a></li>
-							<li><a href="color-settings.html">Color Settings</a></li>
-							<li><a href="third-party-plugins.html">Third Party Plugins</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="https://dropways.github.io/deskapp-free-single-page-website-template/" target="_blank"
-							class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-paper-plane1"></span>
-							<span class="mtext">Landing Page <img src="vendors/images/coming-soon.png" alt=""
-									width="25"></span>
-						</a>
 					</li>
 				</ul>
 			</div>
@@ -547,7 +424,8 @@
 				<div class="col-xl-8 mb-30">
 					<div class="card-box height-100-p pd-20">
 						<h2 class="h4 mb-20">Activity</h2>
-						<div id="chart5"></div>
+						<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+						<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 					</div>
 				</div>
 				<div class="col-xl-4 mb-30">
@@ -558,11 +436,98 @@
 				</div>
 			</div>
 			<!-- Table des donnees -->
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta veritatis in tenetur doloremque, maiores
-				doloribus officia iste. Dolores.</p>
-			<a href="../view/form-basic.php">Ajouter un Campground</a>
+			<div class="row" align="center">
+				<div class="col-3" align="center">
+					<a href="../view/form-basic.php" class="btn btn-info mb-3">Ajouter un Campground</a>
+				</div>
+				<div class="col-3">
+					<form method="POST" action="index.php?Sort=byNote" align="center">
+						<button class="btn btn-info mb-3" type="submit">Sort by note</button>
+						<input type="hidden" value=<?PHP echo "p['idProduit'];" ?> name="id">
+					</form>
+				</div>
+				<div class="col-3" align="center">
+					<form method="POST" action="index.php?Sort=byPopularity">
+						<button class="btn btn-info mb-3" type="submit">Sort by Popularity</button>
+						<input type="hidden" value=<?PHP echo "idProduit" ; ?> name="id">
+					</form>
+				</div>
+				<div class="col-3" align="center">
+					<form method="POST" action="index.php">
+						<button class="btn btn-info mb-3" type="submit">Cancel</button>
+						<input type="hidden" value=<?PHP echo "idProduit" ; ?> name="id">
+					</form>
+				</div>
+			</div>
 			<div class="card-box mb-30">
-				<h2 class="h4 pd-20">Best Selling Products</h2>
+				<h2 class="h4 pd-20">Campgrounds</h2>
+				<?php 
+				if (isset($_GET['Sort'])) {
+					if($_GET['Sort']=="byNote"){
+						echo "ByyyyyyNoooooote";
+						$avgReviews = $reviewC->avgReviews();
+						log_as_json2($avgReviews);
+						//COUNT(note), NomCampRv
+						?>
+				<table id="data" class="data-table table nowrap">
+					<thead>
+						<tr>
+							<th class="table-plus datatable-nosort">Moyenne note</th>
+							<th>Nom Campgroud</th>
+							<th class="datatable-nosort">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						foreach($avgReviews as $avgReview){
+					?>
+						<tr>
+							<td class="table-plus">
+								<?php echo $avgReview['AVG(note)']; ?>
+							</td>
+							<td><?php echo $avgReview['NomCampRv']; ?></td>
+						</tr>
+						<?php
+						}
+					?>
+					</tbody>
+				</table>
+				<?php
+					}
+					if($_GET['Sort']=="byPopularity"){
+						echo "byyyyyyyyyyPoooooooooop";
+						$popularity = $reviewC->sortByPop();
+						log_as_json2($popularity);
+						?>
+				<table id="data" class="data-table table nowrap">
+					<thead>
+						<tr>
+							<th>Nombre de Reviews</th>
+							<th>Nom Campground</th>
+							<th class="datatable-nosort">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						foreach($popularity as $onePop){
+					?>
+						<tr>
+							<td class="table-plus">
+								<?php echo $onePop['COUNT(note)']; ?>
+							</td>
+							<td><?php echo $onePop['NomCampRv']; ?></td>
+						</tr>
+						<?php
+						}
+					?>
+					</tbody>
+				</table>
+				<?php
+					}
+				}
+				else{
+			?>
+
 				<table id="data" class="data-table table nowrap">
 					<thead>
 						<tr>
@@ -587,7 +552,7 @@
 							</td>
 							<td><?php echo $Camp['NomCamp']; ?></td>
 							<?php $path = $Camp['imageCamp'];?>
-							<td> <img src="<?php echo $path;?>" alt=""></td>
+							<td> <img style="max-width: 50%;" src="<?php echo $path;?>" alt=""></td>
 							<td>
 								<h5 class="font-16"><?php echo $Camp['prix']; ?></h5>
 							</td>
@@ -624,7 +589,8 @@
 					?>
 					</tbody>
 				</table>
-				<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+				<?php } ?>
+				<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
 				</script>
 				<script type="text/javascript">
 					$("#btnPrint").live("click", function () {
@@ -643,7 +609,7 @@
 						This content needs to be printed.
 					</div>
 					<input type="button" value="Print Div Contents" id="btnPrint" />
-				</form>
+				</form> -->
 				<h2 class="h4 pd-20">Best Selling Products</h2>
 				<table class="data-table table nowrap">
 					<thead>
@@ -687,6 +653,40 @@
 				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit
 					Hingarajiya</a>
 			</div>
+
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+				Launch demo modal
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div>
+								...
+								<a href="test.php">Chart</a>
+								<a href="test2.php">Histogram</a>
+								<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+								<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+							</div>
+
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
 	<!-- js -->
@@ -700,6 +700,9 @@
 	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="vendors/scripts/dashboard.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+	</script>
 </body>
 
 </html>

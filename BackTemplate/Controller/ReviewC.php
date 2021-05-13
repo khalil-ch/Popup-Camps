@@ -88,14 +88,7 @@
 		}
 		function compterReview($name){
 			try{
-				$db = config::getConnexion();/*
-				$query = $db->prepare(
-					'SELECT COUNT(NomCampRV) FROM Reviews WHERE NomCampRv = 'Wood House''
-				);*//*
-				$query->execute([
-					'NomCampRv' => $name
-				]);*/
-				// 'mysql:host=localhost;dbname=PopupCamps', 'root', ''
+				$db = config::getConnexion();
 				$servername = "localhost";
 				$username = "root";
 				$password = "";
@@ -111,6 +104,62 @@
 				die('Erreur: '.$e->getMessage());
 			}	
 	
+		}
+		function avgReviews(){
+			$sql="SELECT AVG(note), NomCampRv, COUNT(note) FROM Reviews GROUP BY NomCampRv ORDER BY AVG(note) DESC";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+		}
+		function sortByPop(){
+			$sql="SELECT COUNT(note), NomCampRv FROM Reviews GROUP BY NomCampRv";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+				return $liste;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}	
+			// try{
+			// 	$db = config::getConnexion();
+			// 	$servername = "localhost";
+			// 	$username = "root";
+			// 	$password = "";
+			// 	$dbname = "PopupCamps";
+			// 	$con = mysqli_connect($servername,$username,$password,$dbname);
+			// 	$sql = "SELECT COUNT(note), NomCampRv FROM Reviews GROUP BY NomCampRv";
+			// 	$result = mysqli_query($con,$sql);
+			// 	$values = mysqli_fetch_assoc($result);
+			// 	//$num_rows=$values['NomCampRV'];
+			// 	return $values;
+			// }
+			// catch (Exception $e){
+			// 	die('Erreur: '.$e->getMessage());
+			// }	
+	
+		}
+		function moyReviews($name){
+			try{
+				$db = config::getConnexion();
+				$servername = "localhost";
+				$username = "root";
+				$password = "";
+				$dbname = "PopupCamps";
+				$con = mysqli_connect($servername,$username,$password,$dbname);
+				$sql = "SELECT AVG(note) FROM Reviews WHERE NomCampRv = '$name'";
+				$result = mysqli_query($con,$sql);
+				$values = mysqli_fetch_assoc($result);
+				return $values;
+			}
+			catch (Exception $e){
+				die('Erreur: '.$e->getMessage());
+			}
 		}
 		function selectReview($name){
 			try{
