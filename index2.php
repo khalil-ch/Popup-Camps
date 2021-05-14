@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Devcorps</title>
+    <title>Trips &mdash; Website Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -47,7 +47,7 @@
             <div class="col-3 ">
               <div class="site-logo">
                 <a href="index.html" class="font-weight-bold">
-                  <img src="trips/trips/images/logo.png" alt="Image" class="img-fluid">
+                  <img src="images/logo.png" alt="Image" class="img-fluid">
                 </a>
               </div>
             </div>
@@ -65,7 +65,7 @@
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="trips.html" class="nav-link">Trips</a></li>
                   <li><a href="blog.html" class="nav-link">Blog</a></li>
-                  <li><a href="login.php" class="nav-link">Login</a></li>
+                  <li><a href="profile.php" class="nav-link">Personal space</a></li>
                 </ul>
               </nav>
             </div>
@@ -517,4 +517,3 @@
   </body>
 
 </html>
-

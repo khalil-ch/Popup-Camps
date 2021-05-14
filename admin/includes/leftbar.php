@@ -1,4 +1,4 @@
-﻿</html>
+﻿ </html>
  <body>
 	 <div class="left-side-bar">
 		<div class="brand-logo">
@@ -25,6 +25,7 @@
     <div class="dropdown-menu" aria-labelledby="dropdown01">
     <a class="dropdown-item" href="userlist.php">Users list</a>
     <a class="dropdown-item" href="deleteduser.php">deleted users</a>
+<a class="dropdown-item" href="feedback.php">Feedback</a>
     
   </div>
 </li>
@@ -58,12 +59,7 @@
 </li>
 
                                     
-					</li>
- </li>
-						<a href="feedback.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-invoice"></span><span class="mtext">feedback</span>
-						</a>
-					</li>
+					
 
 						
 					</li>
