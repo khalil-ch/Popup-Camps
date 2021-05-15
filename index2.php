@@ -62,10 +62,13 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="front/view/produits.php" class="nav-link">Products</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="trips.html" class="nav-link">Trips</a></li>
                   <li><a href="blog.html" class="nav-link">Blog</a></li>
-                  <li><a href="profile.php" class="nav-link">Personal space</a></li>
+                  <li><a href="profile.php" class="nav-link">Personal space</a></li> 
+                    <li><a href="front/view/shopingcart.php" class="nav-link">Cart</a></li>
+                  <li><a href="front/View/afficherToutCommande.php" class="nav-link">Commandes</a></li>
                 </ul>
               </nav>
             </div>

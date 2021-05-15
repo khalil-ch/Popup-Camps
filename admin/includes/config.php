@@ -3,7 +3,7 @@
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','armentum');
+define('DB_NAME','mydb');
 // Establish database connection.
 try
 {

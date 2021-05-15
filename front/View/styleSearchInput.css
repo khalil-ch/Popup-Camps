@@ -1,0 +1,33 @@
+#search{
+
+  padding: 6px;
+  border:1px solid #efba6c;
+  font-size: 17px;
+}
+#search:focus{
+    outline:none;
+    border:2px solid #efba6c;
+
+}
+
+.search-container{
+    position:absolute;
+     top:130px;
+      right:150px;
+}
+.searchBtn{
+    padding: 6px;
+   
+    background-color:#fff;
+    color:#ccc;
+   border:1px solid #efba6c;
+    border-radius:4px;
+}
+.searchBtn:hover{
+     padding: 6px;
+    border-radius:4px;
+    background-color:#efba6c;
+    color:#000;
+    border-color:#efba6c;
+    border-width: 1px;
+}

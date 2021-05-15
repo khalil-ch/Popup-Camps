@@ -1,6 +1,6 @@
 ﻿ </html>
  <body>
-	 <div class="left-side-bar">
+	 <div class="left-side-bar" style="overflow:auto;">
 		<div class="brand-logo">
 			<a href="header.php">
 				<img src="deskapp2-master/vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
@@ -76,6 +76,30 @@
 
 
 
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produits</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+    <a class="dropdown-item" href="/popupcampIntegrated/popupcamp/back/View/afficherProducts.php">show products</a>
+    <a class="dropdown-item" href="/popupcampIntegrated/popupcamp/back/View/ajouterProduit.php">add  product</a>
+    
+  </div>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">category</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+    <a class="dropdown-item" href="/popupcampIntegrated/popupcamp/back/View/affichercategorie.php">show category</a>
+    <a class="dropdown-item" href="/popupcampIntegrated/popupcamp/back/View/ajouterCategorie.php">add  category</a>
+    
+  </div>
+</li>
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Commande</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+    <a class="dropdown-item" href="/popupcampIntegrated/popupcamp/back/View/afficherCommandes.php">show commande</a>
+ 
+  </div>
+</li>
 			
 				</ul>
 			</div>

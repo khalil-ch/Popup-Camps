@@ -1,5 +1,4 @@
-﻿<!doctype html>
-<html lang="en">
+﻿
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -47,8 +46,8 @@
             <li><a href="feedback.php"><span class="icon-location-arrow mr-3"></span>Feedback</a></li>
             <li><a href="notification.php"><span class="icon-pie-chart mr-3"></span>notifications</a></li>
             <li><a href="messages.php"><span class="icon-sign-out mr-3"></span>messages</a></li>
- <li><a href="change-password.php"><span class="icon-sign-out mr-3"></span>change password</a></li>
-<li><a href="logout.php"><span class="icon-sign-out mr-3"></span>logout</a></li>
+            <li><a href="change-password.php"><span class="icon-sign-out mr-3"></span>change password</a></li>
+            <li><a href="logout.php"><span class="icon-sign-out mr-3"></span>logout</a></li>
 
 
           </ul>
@@ -64,5 +63,5 @@
     <script src="08/js/popper.min.js"></script>
     <script src="08/js/bootstrap.min.js"></script>
     <script src="08/js/main.js"></script>
-  </body>
+ </body>
 </html>
