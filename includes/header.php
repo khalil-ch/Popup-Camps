@@ -61,10 +61,11 @@
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li><a href="front/View/index.html" class="nav-link">Home</a></li>
+                  <li><a href="front/View/index.php" class="nav-link">Home</a></li>
 			        	  <li><a href="front/view/produits.php" class="nav-link">Products</a></li>
                   <li><a href="front/View/about.html" class="nav-link">About</a></li>
                   <li><a href="front/View/trips.html" class="nav-link">Trips</a></li>
+                  <li><a href="/popupcamp/front/View/listCamps.php" class="nav-link">Our Campgrounds</a></li>
                   <li><a href="front/View/blog.html" class="nav-link">Blog</a></li>
                   <li><a href="../popupcamp/profile.php" class="nav-link">Personal space</a></li>
                   <li><a href="/popupcamp/front/view/shopingcart.php" class="nav-link">Cart</a></li>

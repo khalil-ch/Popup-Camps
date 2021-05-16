@@ -44,7 +44,7 @@
 <body>
   
     <?php
-    include_once './header.php';
+    include_once '/header.php';
 	require_once "../Controller/produitC.php";
 	 require_once '../Controller/categorieC.php';
 	$produitC =new produitC();
