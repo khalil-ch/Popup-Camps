@@ -5,7 +5,7 @@
 
 	class ReviewC {
 		
-		function ajouterReview($Review,$userId){
+		function ajouterReview($Review){
 			$sql="INSERT INTO `reviews` (`NomCampRv`, `note`, `user`, `comment`, `userID`)
 			VALUES (:NomCampRv, :note, :user, :comment, :userID)";
 			$db = config::getConnexion();
@@ -17,26 +17,7 @@
 					'note' => $Review->getNote(),
 					'user' => $Review->getUser(),
 					'comment' => $Review->getComment(),
-					'userID' => $userId//$Review->getUserId()
-				]);
-			}
-			catch (Exception $e){
-				echo 'Erreur: '.$e->getMessage();
-			}			
-		}
-		public function newajout($Review,$userId){
-			$sql="INSERT INTO `reviews` (`NomCampRv`, `note`, `user`, `comment`, `userID`)
-			VALUES (:NomCampRv, :note, :user, :comment, :userID)";
-			$db = config::getConnexion();
-			try{
-				$query = $db->prepare($sql);
-			
-				$query->execute([
-					'NomCampRv' => $Review->getNomCampRv(),
-					'note' => $Review->getNote(),
-					'user' => $Review->getUser(),
-					'comment' => $Review->getComment(),
-					'userID' => $userId//$Review->getUserId()
+					'userID' => $Review->getUserId()
 				]);
 			}
 			catch (Exception $e){

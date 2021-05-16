@@ -1,7 +1,7 @@
 <?php
     // include_once '../Model/Review.php';
-	include_once "/xampp/htdocs/Popup-Camps-master/BackTemplate/Model/Campground.php";
-	include_once "/xampp/htdocs/Popup-Camps-master/BackTemplate/Controller/ReviewC.php";
+	include_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Model/Campground.php";
+	include_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/ReviewC.php";
 	
 	session_start();
 	if(isset($_SESSION['alogin'])){
@@ -35,9 +35,9 @@ if (
                 $_POST['rating'], 
                 $_POST['user'],
                 $_POST['comment'],
-				50//$_SESSION['id']
+				$_SESSION['id']
         );
-		$reviewC->newajout($review,71);
+		$reviewC->ajouterReview($review);
         //('Location:index.php');
 		
     }
