@@ -129,8 +129,6 @@ if (
               <div class="listing-item-content">
                 <a href="#" class="btn btn-warning">Order Now</a>
               </div>
-
-
             </div>
           </div>
         </div>

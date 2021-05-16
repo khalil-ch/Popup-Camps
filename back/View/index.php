@@ -387,27 +387,32 @@ $i=0;
 			</div>
 			<!-- Table des donnees -->
 			<div class="row" align="center">
-				<div class="col-3" align="center">
+				<div class="col"></div>
+				<div class="col-2" align="center">
 					<a href="../view/form-basic.php" class="btn btn-info mb-3">Ajouter un Campground</a>
 				</div>
-				<div class="col-3">
+				<div class="col-2">
 					<form method="POST" action="index.php?Sort=byNote" align="center">
 						<button class="btn btn-info mb-3" type="submit">Sort by note</button>
 						<input type="hidden" value=<?PHP echo "p['idProduit'];" ?> name="id">
 					</form>
 				</div>
-				<div class="col-3" align="center">
+				<div class="col-2" align="center">
 					<form method="POST" action="index.php?Sort=byPopularity">
 						<button class="btn btn-info mb-3" type="submit">Sort by Popularity</button>
 						<input type="hidden" value=<?PHP echo "idProduit" ; ?> name="id">
 					</form>
 				</div>
-				<div class="col-3" align="center">
+				<div class="col-2" align="center">
 					<form method="POST" action="index.php">
 						<button class="btn btn-info mb-3" type="submit">Cancel</button>
 						<input type="hidden" value=<?PHP echo "idProduit" ; ?> name="id">
 					</form>
 				</div>
+				<div class="col-2 " align="center">
+				<a href="pdfCamps.php" class="btn btn-info mb-3">Print Pdf</a>
+				</div>
+				<div class="col "></div>
 			</div>
 			<div class="card-box mb-30">
 				<h2 class="h4 pd-20">Campgrounds</h2>
