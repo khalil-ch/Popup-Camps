@@ -2,11 +2,11 @@
   include_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/CampgroundC.php";
   require_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/ReviewC.php";
   session_start();
-	if(!isset($_SESSION['id'])){
-    //header("location:../../login.php");
+  if(!isset($_SESSION['id'])){
+    header("location:../../login.php");
   }
   else{
-    header("location:../../login.php");
+
   }
   $campgroundC = new CampgroundC;
   $results = $campgroundC->selectCamp($_GET['nomCampRv']);
