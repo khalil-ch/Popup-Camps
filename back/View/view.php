@@ -88,7 +88,7 @@ if (
 </head>
 
 <body>
-	
+
 	<div class="pre-loader">
 		<div class="pre-loader-box">
 			<div class="loader-logo"><img src="vendors/images/deskapp-logo.svg" alt=""></div>
@@ -467,7 +467,7 @@ if (
 							<td><?php echo $onereview['user']; ?></td>
 							<td><?php echo $onereview['comment']; ?></td>
 							<td>
-							<div class="dropdown">
+								<div class="dropdown">
 									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
 										role="button" data-toggle="dropdown">
 										<i class="dw dw-more"></i>
@@ -477,10 +477,11 @@ if (
 											href="advanced-components.php?idReview=<?PHP echo $onereview['idReview']; ?>&nomCamp=<?PHP echo $onereview['NomCampRv']; ?>"><i
 												class="dw dw-edit2"></i> Edit</a>
 										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
-										<form method="POST" action="supprimerReview.php">
-									<button type="submit">Supprimer</button>
-									<input type="hidden" value=<?PHP echo $onereview['idReview']; ?> name="id">
-								</form>
+											<form method="POST" action="supprimerReview.php">
+												<button type="submit">Supprimer</button>
+												<input type="hidden" value=<?PHP echo $onereview['idReview']; ?>
+												name="id">
+											</form>
 										</a>
 									</div>
 								</div>

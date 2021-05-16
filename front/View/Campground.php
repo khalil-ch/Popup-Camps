@@ -1,6 +1,13 @@
 <?php 
   include_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/CampgroundC.php";
   require_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/ReviewC.php";
+  session_start();
+	if(isset($_SESSION['id'])){
+    //header("location:../../login.php");
+  }
+  else{
+    header("location:../../login.php");
+  }
   $campgroundC = new CampgroundC;
   $results = $campgroundC->selectCamp($_GET['nomCampRv']);
   $reviewC = new ReviewC;
@@ -33,7 +40,34 @@ if (
     else
         $error = "Missing information";
 }
-
+$i=1;
+if (
+  isset($_POST["reviewidform"]) &&
+  isset($_POST["noteform"]) &&
+  isset($_POST["usernameform"]) && 
+  isset($_POST["commentform"])
+) {
+  if (
+    !empty($_POST["noteform"]) && 
+    !empty($_POST["usernameform"]) && 
+    !empty($_POST["commentform"])
+  ) {
+    $reviewEdit = new Review(
+      $_POST['reviewidform'],
+        $_GET['nomCampRv'],
+        $_POST['noteform'], 
+        $_POST['usernameform'],
+        $_POST['commentform'],
+        $_SESSION['id']
+    );
+    $reviewC->modifierReview($reviewEdit,$_POST["reviewidform"]);
+    //header('Location:index.php');
+  }
+  else{
+    $error = "Missing information";
+  }
+    
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -83,6 +117,7 @@ if (
     include "./header.php";
 						foreach($results as $camp){
 					?>
+
     <div class="ftco-blocks-cover-1">
       <div class="site-section-cover overlay" style="background-image: url('<?php echo $camp['imageCamp'];?>')">
         <div class="container">
@@ -92,7 +127,7 @@ if (
               <p>by <?php echo $camp['proprietaire'];?></p>
 
               <div class="listing-item-content">
-                <a class="px-3 mb-3 category bg-primary" href="#">$330.00</a>
+                <a href="#" class="btn btn-warning">Order Now</a>
               </div>
 
 
@@ -130,24 +165,64 @@ if (
       <?php
 						foreach($resultsReview as $resultR){
 					?>
-      <div class="card">
-        <div class="card-header">
-          Featured
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">By : <?php echo $resultR['user']; ?></h5>
-          <p class="starability-result" data-rating="<?php echo $resultR['note']; ?>">
-            Rated: <?php echo $resultR['note']; ?> stars
-          </p>
-          <p class="card-text"><?php echo $resultR['comment']; ?></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-8">
+            <div class="card mg-3" style="border-radius: 2%;">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">By : <?php echo $resultR['user']; ?></h5>
+                <p class="starability-result" data-rating="<?php echo $resultR['note']; ?>">
+                  Rated: <?php echo $resultR['note']; ?> stars
+                </p>
+                <p class="card-text"><?php echo $resultR['comment']; ?></p>
+
+                <div class="dropdown">
+                  <button class="btn btn-primary mt-3 dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <?php 
+            if ($_SESSION['id']!==$resultR['userID']) {
+              ?> hidden <?php
+            }
+            ?>>
+                    Edit your comment
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-item lg">
+                      <form action="" method="POST">
+                        <div class="mb-3">
+                          <input type="number" name="noteform<?php // echo $i;?>"
+                            value="<?php echo $resultR['note']; ?>" max="5" min="0">
+                          <input type="text" name="usernameform<?php // echo $i;?>" id="usernameform"
+                            value="<?php echo $resultR['user']; ?>" hidden>
+                          <input type="text" name="reviewidform<?php //echo $i;?>" id="reviewidform"
+                            value="<?php echo $resultR['idReview']; ?>" hidden>
+                          <label for="exampleFormControlTextarea1" class="form-label">Edit your comment</label>
+                          <textarea class="form-control" name="commentform<?php //echo $i;?>"
+                            id="exampleFormControlTextarea1" rows="3"> <?php echo $resultR['comment'];?></textarea>
+                          <input type="submit" href="#" class="btn btn-primary mt-3" value="submit">
+                        </div>
+                      </form>
+                      <form method="POST" action="supprimerReview.php">
+                        <button class="btn btn-primary mt-3" type="submit">Supprimer</button>
+                        <input type="hidden" value="<?PHP echo $resultR['idReview']; ?>" name="iddelete">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col"></div>
         </div>
       </div>
       <?php
           						}
 					?>
       <div class="site-section">
-        <div class="container" style="background: pink;padding :2%">
+        <div class="container" style="background: pink;padding :2%;border-radius:10px;">
           <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
@@ -313,7 +388,6 @@ if (
       </footer>
 
     </div>
-
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-migrate-3.0.0.js"></script>
     <script src="js/popper.min.js"></script>
