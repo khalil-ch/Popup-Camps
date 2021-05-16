@@ -1,5 +1,9 @@
 <?php 	
 	include "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/ReviewC.php";
+	session_start();
+	if (!isset($_SESSION['alogin'])) {
+		header("location:../../admin/index.php");
+	}
 
 
 	$reviewC = new ReviewC();

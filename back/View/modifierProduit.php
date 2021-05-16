@@ -3,6 +3,11 @@
 	  require_once '../Model/produit.php';
     require_once "../Controller/categorieC.php";
 
+    session_start();
+    if (!isset($_SESSION['alogin'])) {
+      header("location:../../admin/index.php");
+    }
+
 	$produitC = new produitC(); 
 	$error = "";
 	

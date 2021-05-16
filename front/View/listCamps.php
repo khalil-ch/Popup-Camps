@@ -1,6 +1,13 @@
 <?php 
   include_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/CampgroundC.php";
   require_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/ReviewC.php";
+
+  if(isset($_SESSION['id'])){
+    //header("location:../../login.php");
+  }
+  else{
+    header("location:../../login.php");
+  }
   $campgroundC = new CampgroundC;
   $reviewC = new ReviewC;
   $listCamps=$campgroundC->afficherCampgrounds();

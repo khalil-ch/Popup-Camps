@@ -1,6 +1,12 @@
 <?php
     include_once '../Controller/CampgroundC.php';
 
+	session_start();
+if (!isset($_SESSION['alogin'])) {
+	header("location:../../admin/index.php");
+}
+	
+
     $error = "";
 
     // create user
