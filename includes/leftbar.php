@@ -45,10 +45,11 @@
             <li><a href="profile.php"><span class="icon-notifications mr-3"></span>profile</a></li>
             <li><a href="feedback.php"><span class="icon-location-arrow mr-3"></span>Feedback</a></li>
             <li><a href="notification.php"><span class="icon-pie-chart mr-3"></span>notifications</a></li>
-            <li><a href="messages.php"><span class="icon-sign-out mr-3"></span>messages</a></li>
+            <li><a href="messages.php"><span class="glyphicon glyphicon-envelope"></span>messages</a></li>
             <li><a href="change-password.php"><span class="icon-sign-out mr-3"></span>change password</a></li>
-            <li><a href="logout.php"><span class="icon-sign-out mr-3"></span>logout</a></li>
-
+<li><a href="user-map.php"><span class="glyphicon glyphicon-file"></span>map</a></li>
+<li><a href="filpdf.php"><span class="glyphicon glyphicon-file"></span>fill form</a></li>
+            
 
           </ul>
         </div>

@@ -134,18 +134,18 @@ $error="Something went wrong. Please try again";
             <div class="form-group">
               <label class="col-sm-1 control-label">Name<span style="color:red">*</span></label>
               <div class="col-sm-5">
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" id="name" name="name" class="form-control" required>
               </div>
               <label class="col-sm-1 control-label">Email<span style="color:red">*</span></label>
               <div class="col-sm-5">
-                <input type="text" name="email" class="form-control" required>
+                <input type="text" id="email" name="email" class="form-control" required>
               </div>
             </div>
 
             <div class="form-group">
               <label class="col-sm-1 control-label">Password<span style="color:red">*</span></label>
               <div class="col-sm-5">
-                <input type="password" name="password" class="form-control" id="password" required>
+                <input type="password" id="password" name="password" class="form-control" id="password" required>
               </div>
 
               <label class="col-sm-1 control-label">Designation<span style="color:red">*</span></label>
@@ -178,7 +178,7 @@ $error="Something went wrong. Please try again";
             </div>
 
             <br>
-            <button class="btn btn-primary" name="submit" type="submit">Register</button>
+            <button class="btn btn-primary" id ="submit" name="submit" type="submit">Register</button>
           </form>
           <br>
           <br>
@@ -200,6 +200,7 @@ $error="Something went wrong. Please try again";
   <script src="js/fileinput.js"></script>
   <script src="js/chartData.js"></script>
   <script src="js/main.js"></script>
+  <script src="controle.js"></script>
 
 </body>
 
