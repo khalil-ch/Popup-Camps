@@ -48,6 +48,10 @@
                    <li><a href="afficherToutCommande.php" class="nav-link">Commandes</a></li>
 
                  </ul>
+                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                  <li><a href="Events.php" class="nav-link">Events</a></li>
+                  
+                </ul>
                </nav>
              </div>
 

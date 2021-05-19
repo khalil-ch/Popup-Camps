@@ -138,23 +138,23 @@
 					 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage suppliers</a>
     <div class="dropdown-menu" aria-labelledby="dropdown01">
-    <a class="dropdown-item" href="../../popupcamp/back/views/AfficherFournisseur.php">List  suppliers </a> 
-	<a class="dropdown-item" href="../../popupcamp/back/views/connexion.php">Add suppliers</a>
+    <a class="dropdown-item" href="../Views/AfficherFournisseur.php">List  suppliers </a> 
+	<a class="dropdown-item" href="../Views/connexion.php">Add suppliers</a>
    
   </div>
 </li>
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage events</a>
     <div class="dropdown-menu" aria-labelledby="dropdown01">
-    <a class="dropdown-item" href="../../popupcamp/back/views/afficherEvents.php">List events</a>
-    <a class="dropdown-item" href="../back/views/addEvent.php">Add event</a>    
+    <a class="dropdown-item" href="../Views/afficherEvents.php">List events</a>
+    <a class="dropdown-item" href="../Views/addEvent.php">Add event</a>    
   </div>
 </li>
 
                                     
 					</li>
  </li>
-						<a href="../../popupcamp/back/views/download.php" class="dropdown-toggle no-arrow">
+						<a href="download.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-invoice"></span><span class="mtext">EXPORT SUPPLIERS EXCEL</span>
 						</a>
 					</li>
@@ -168,7 +168,7 @@
 
 					</li>
  </li>
-						<a href="../../popupcamp/back/views/pdf.php" class="dropdown-toggle no-arrow">
+						<a href="pdf.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-invoice"></span><span class="mtext">EXPORT SUPPLIERS PDF</span>
 						</a>
 					</li>
