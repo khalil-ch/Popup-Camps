@@ -65,13 +65,13 @@
 			        	  <li><a href="front/view/produits.php" class="nav-link">Products</a></li>
                   <li><a href="front/View/about.html" class="nav-link">About</a></li>
                   <li><a href="front/View/trips.html" class="nav-link">Trips</a></li>
-                  <li><a href="/popupcamp/front/View/listCamps.php" class="nav-link">Our Campgrounds</a></li>
+                  <li><a href="=../popupcampfront/View/listCamps.php" class="nav-link">Our Campgrounds</a></li>
                   <li><a href="front/View/blog.html" class="nav-link">Blog</a></li>
                   <li><a href="../popupcamp/profile.php" class="nav-link">Personal space</a></li>
-                  <li><a href="/popupcamp/front/view/shopingcart.php" class="nav-link">Cart</a></li>
-                  <li><a href="/popupcamp/front/View/afficherToutCommande.php" class="nav-link">Commandes</a></li>
-<li><a href="/popupcamp/front/view/afficherevent.php" class="nav-link">events</a></li>
-<li><a href="/popupcamp/front/view/promotab.php" class="nav-link">promotions</a></li>
+                  <li><a href="../popupcamp/front/view/shopingcart.php" class="nav-link">Cart</a></li>
+                  <li><a href="../popupcamp/front/View/afficherToutCommande.php" class="nav-link">Commandes</a></li>
+<li><a href="../popupcamp/front/view/afficherevent.php" class="nav-link">events</a></li>
+<li><a href="../popupcamp/front/view/promotab.php" class="nav-link">promotions</a></li>
                   <li><a href="logout.php" class="nav-link">logout</a></li>
                 </ul>
               </nav>
