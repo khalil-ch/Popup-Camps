@@ -42,10 +42,10 @@ $i=0;
                 animationEnabled: true,
                 exportEnabled: true,
                 title: {
-                    text: "Average Expense Per Day  in Thai Baht"
+                    text: "%Reviews per Campground"
                 },
                 subtitles: [{
-                    text: "Currency Used: Thai Baht (฿)"
+                    text: "most popular Campgrounds"
                 }],
                 data: [{
                     type: "pie",

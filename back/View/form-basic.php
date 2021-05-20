@@ -90,7 +90,7 @@ if (!isset($_SESSION['alogin'])) {
 </head>
 
 <body>
-<?php 
+	<?php 
 	include_once 'includes/topside.php';
 	?>
 
@@ -160,7 +160,8 @@ if (!isset($_SESSION['alogin'])) {
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label" for="prix">Prix:</label>
 							<div class="col-sm-12 col-md-10">
-								<input class="form-control" type="number" name="prix" id="validationCustom03" maxlength="4" required>
+								<input class="form-control" type="number" name="prix" id="validationCustom03"
+									maxlength="4" required>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -173,7 +174,8 @@ if (!isset($_SESSION['alogin'])) {
 						<div class="form-group row">
 							<label class="col-sm-12 col-md-2 col-form-label" for="description">Description:</label>
 							<div class="col-sm-12 col-md-10">
-								<textarea name="description" id="validationCustom06" cols="30" rows="10" required></textarea>
+								<textarea name="description" id="validationCustom06" cols="30" rows="10"
+									required></textarea>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -191,7 +193,8 @@ if (!isset($_SESSION['alogin'])) {
 							</div>
 						</div>
 						<div class="form-group row">
-							<input type="submit" name="envoyer" id="envoyer" onclick="verif()" class="btn btn-info" value="evoyer">
+							<input type="submit" name="envoyer" id="envoyer" onclick="verif()" class="btn btn-info"
+								value="evoyer">
 							<button class="btn btn-danger col-6" type="reset">Cancel</button>
 						</div>
 					</form>

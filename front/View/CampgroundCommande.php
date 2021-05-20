@@ -23,8 +23,8 @@ if (
     !empty($_POST["dateCommande"]) && 
     !empty($_POST["jourCommande"])
   ) {
-    
-    $commandeCC->ajouterCommandeCampground($_SESSION['id'],$_POST['dateCommande'],$_POST['jourCommande']);
+    $total=$_POST['jourCommande']*$_GET['prix'];
+    $commandeCC->ajouterCommandeCampground($_SESSION['id'],$_POST['dateCommande'],$total);
     //header('Location:index.php');
   }
   else{

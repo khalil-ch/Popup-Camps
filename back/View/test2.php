@@ -28,10 +28,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title: {
-		text: "Top 10 Google Play Categories - till 2017"
+		text: "Distribution of Campgrounds per Reviews"
 	},
 	axisY: {
-		title: "Number of Apps"
+		title: "Number of review/Campgrounds"
 	},
 	data: [{
 		type: "column",

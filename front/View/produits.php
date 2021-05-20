@@ -1,39 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <link href="assets/css/style.css" rel="stylesheet">
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link href="assets/css/style.css" rel="stylesheet">
 
 
-      <!-- font awesome -->
+  <!-- font awesome -->
 
-      <script src="https://use.fontawesome.com/your-embed-code.js"></script>
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-      <!-- my custom input css -->
-       <link rel="stylesheet" href="styleSearchInput.css">
-    <title>Document</title>
+  <script src="https://use.fontawesome.com/your-embed-code.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- my custom input css -->
+  <link rel="stylesheet" href="styleSearchInput.css">
+  <title>Document</title>
 </head>
+
 <body>
-  
-    <?php
+
+  <?php
     include_once './header.php';
 	require_once "../Controller/produitC.php";
 	require_once '../Controller/categorieC.php';
@@ -59,21 +60,21 @@
 	 
 ?>
 
-      <div class="search-container" >
-          <form action="searchProduct.php" method="GET">
-          <input type="search" name="search" id="search" placeholder="search">
-           <input type="submit" value="search" class="searchBtn">
-            
-        </form>
-      </div>
-    <section>
-	
-		
-		<form method="post" action="" style="position:absolute; top:135px; left:150px;">
-		
-		
-				 <select name="categorie" id="" class="">
-            <?php
+  <div class="search-container">
+    <form action="searchProduct.php" method="POST">
+      <input type="search" name="search" id="search" placeholder="search">
+      <input type="submit" value="search" name="searchbtn" class="searchBtn">
+
+    </form>
+  </div>
+  <section>
+
+
+    <form method="post" action="" style="position:absolute; top:135px; left:150px;">
+
+
+      <select name="categorie" id="" class="">
+        <?php
             
                 foreach($rowsCat as $rowCat)
                   {
@@ -83,17 +84,17 @@
                 echo "<option value='$value'> $nom </option>";
                 } 
             ?>
-                </select>
-				<input type="submit" name="submit" value="Search for this Category" class="searchBtn" style="margin-left:15px;"/>
-		</form>
-	
-		
-		
+      </select>
+      <input type="submit" name="submit" value="Search for this Category" class="searchBtn" style="margin-left:15px;" />
+    </form>
 
 
-            <div class="section-inner"> 
-                <div class="container p-50">
-                   <?php
+
+
+
+    <div class="section-inner">
+      <div class="container p-50">
+        <?php
                 $i=0;
                 echo '<div class="row">';
 			foreach($rows as $row){
@@ -126,14 +127,15 @@
 
         
                  ?>
-                     
-               
-                
-                        
-                        
-                  
-                </div>
-            </div>
-        </section>
+
+
+
+
+
+
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>

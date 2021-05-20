@@ -419,7 +419,6 @@ $i=0;
 				<?php 
 				if (isset($_GET['Sort'])) {
 					if($_GET['Sort']=="byNote"){
-						echo "ByyyyyyNoooooote";
 						$avgReviews = $reviewC->avgReviews();
 						log_as_json2($avgReviews);
 						//COUNT(note), NomCampRv
@@ -450,7 +449,6 @@ $i=0;
 				<?php
 					}
 					if($_GET['Sort']=="byPopularity"){
-						echo "byyyyyyyyyyPoooooooooop";
 						$popularity = $reviewC->sortByPop();
 						log_as_json2($popularity);
 						?>
@@ -527,7 +525,7 @@ $i=0;
 											href="view.php?nomCampRv=<?PHP echo $Camp['NomCamp']; ?>"><i
 												class="dw dw-eye"></i> View</a>
 										<a class="dropdown-item"
-											href="advanced-components.php?idProduit=<?PHP echo $Camp['idProduit']; ?>"><i
+											href="modifierCamp.php?idProduit=<?PHP echo $Camp['idProduit']; ?>"><i
 												class="dw dw-edit2"></i> Edit</a>
 										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
 											<form method="POST" action="../Views/supprimerCampground.php">

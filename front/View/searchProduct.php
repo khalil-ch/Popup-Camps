@@ -39,31 +39,31 @@
 	require_once '../Controller/categorieC.php';
 	 
 
-	if(isset($_POST['submit'])){
-		
-	$selected = $_POST['categorie'];
-	$produitC = new produitC();
-	$rows= $produitC->recupererProduitsSelonCategorie($selected);
-	
-	}
-	else{
-	$produitC =new produitC();
-	$rows=$produitC->afficherProduit();
-		
-	}
+
+  if(isset($_POST['searchbtn'])){
+
+    $selected = $_POST['search'];
+    $produitC = new produitC();
+    $rows= $produitC->rechercheProduit($selected);
+    }
+    else{
+    $produitC =new produitC();
+    $rows=$produitC->afficherProduit();
+
+    }
        $cat = new categorieC();
        $rowsCat = $cat->afficherCategorie();
-	 
-	   
-	
-	 
+
+
+
+
 ?>
 
       <div class="search-container" >
           <form action="searchProduct.php" method="GET">
           <input type="search" name="search" id="search" placeholder="search">
            <input type="submit" value="search" class="searchBtn">
-            
+
         </form>
       </div>
     <section>

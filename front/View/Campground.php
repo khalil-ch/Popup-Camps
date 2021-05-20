@@ -130,7 +130,7 @@ $commandeCC = new commandeC;
               <p>by <?php echo $camp['proprietaire'];?></p>
 
               <div class="listing-item-content">
-                <a href="#" class="btn btn-warning">Order Now</a>
+                <a href="CampgroundCommande.php?prix=<?php echo $camp['prix'];?>" class="btn btn-warning">Order Now <?php echo $camp['prix'];?>$ per day</a>
               </div>
             </div>
           </div>
@@ -206,10 +206,11 @@ $commandeCC = new commandeC;
                           <input type="submit" href="#" class="btn btn-primary mt-3" value="submit">
                         </div>
                       </form>
-                      <form method="POST" action="supprimerReview.php">
-                        <button class="btn btn-primary mt-3" type="submit">Supprimer</button>
-                        <input type="hidden" value="<?PHP echo $resultR['idReview']; ?>" name="iddelete">
-                      </form>
+											<form method="POST" action="supprimerReview.php">
+												<button type="submit">Supprimer</button>
+												<input type="hidden" value=<?PHP echo $resultR['idReview']; ?>
+												name="id">
+											</form>
                     </div>
                   </div>
                 </div>
