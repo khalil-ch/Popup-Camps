@@ -149,6 +149,24 @@
                 ]
                 );
 	}
+	function ajouterCommandeCampground($id_user,$date,$montant){
+		$sql="INSERT INTO commande (id_commande, date_commande, montant_commande, id_user) 
+		VALUES (:id_commande,:date_commande,:montant_commande,:id_user)";
+		$db = config::getConnexion();
+		try{
+			$query = $db->prepare($sql);
+		
+			$query->execute([
+				'id_commande' => "999",
+				'date_commande' => "2021-05-12 23:32:05",
+				'montant_commande' => "999",
+				'id_user' => "50"
+			]);	
+		}
+		catch (Exception $e){
+			echo 'Erreur: '.$e->getMessage();
+		}
+	}
 }
 
 ?>

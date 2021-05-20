@@ -1,6 +1,7 @@
 <?php 
   include_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/CampgroundC.php";
   require_once "/xampp/htdocs/popupcampIntegrated/popupcamp/back/Controller/ReviewC.php";
+  include "../Controller/commandeC.php";
   session_start();
   if(!isset($_SESSION['id'])){
     header("location:../../login.php");
@@ -68,6 +69,8 @@ if (
   }
     
 }
+$commandeCC = new commandeC;
+//$commandeCC->ajouterCommandeCampground($_SESSION['id'],"88","55");
 ?>
 <!doctype html>
 <html lang="en">
