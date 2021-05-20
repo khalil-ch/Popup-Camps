@@ -70,7 +70,7 @@
                   <li><a href="../popupcamp/profile.php" class="nav-link">Personal space</a></li>
                   <li><a href="../popupcamp/front/view/shopingcart.php" class="nav-link">Cart</a></li>
                   <li><a href="../popupcamp/front/View/afficherToutCommande.php" class="nav-link">Commandes</a></li>
-<li><a href="../popupcamp/front/view/afficherevent.php" class="nav-link">events</a></li>
+<li><a href="../popupcamp/front/view/events.php" class="nav-link">events</a></li>
 <li><a href="../popupcamp/front/view/promotab.php" class="nav-link">promotions</a></li>
                   <li><a href="logout.php" class="nav-link">logout</a></li>
                 </ul>

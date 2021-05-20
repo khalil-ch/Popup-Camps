@@ -29,7 +29,7 @@
  							<a class="dropdown-item" href="deleteduser.php">deleted users</a>
  							<a class="dropdown-item" href="feedback.php">Feedback</a>
 <a class="dropdown-item" href="admin-map.php">locations</a>
-<a class="dropdown-item" href="mail/mail.php.php">send mail</a>
+<a class="dropdown-item" href="mail/mail.php">send mail</a>
 
  						</div>
  					</li>

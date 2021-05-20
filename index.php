@@ -63,8 +63,8 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="index.php" class="nav-link">Home</a></li>
                   <li><a href="front/view/listcamps.php" class="nav-link">our campgrounds</a></li>
-                  <li><a href="front/view/afficherevent.php" class="nav-link">events</a></li>
- <li><a href="front/view/tabpromo.php" class="nav-link">promotions</a></li>
+                  <li><a href="front/view/events.php" class="nav-link">events</a></li>
+ <li><a href="front/view/promotab.php" class="nav-link">promotions</a></li>
                   <li><a href="login.php" class="nav-link">Login</a></li>
                 </ul>
               </nav>

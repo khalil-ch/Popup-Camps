@@ -67,7 +67,7 @@
                   <li><a href="profile.php" class="nav-link">Personal space</a></li> 
                     <li><a href="front/view/shopingcart.php" class="nav-link">Cart</a></li>
                   <li><a href="front/View/afficherToutCommande.php" class="nav-link">Commandes</a></li>
-<li><a href="front/View/afficherevent.php" class="nav-link">events</a></li>
+<li><a href="front/View/events.php" class="nav-link">events</a></li>
 <li><a href="front/View/promotab.php" class="nav-link">promotions</a></li>
 <li><a href="front/View/logout.php" class="nav-link">logout</a></li>
                 </ul>
