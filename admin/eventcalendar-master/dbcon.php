@@ -14,7 +14,7 @@ CREATE DATABASE IF NOT EXISTS cal;
 $createDB=$con->query($sqlDB);
 $con->close();
 
-$dbname='armentum';
+$dbname='mydb';
 $con= new mysqli($servername,$username,$password,$dbname);
 if ($con->connect_error) 
 {

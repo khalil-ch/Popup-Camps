@@ -1,4 +1,4 @@
- </html>
+  </html>
 
  <body>
  	<div class="left-side-bar" style="overflow:auto;">
@@ -14,10 +14,8 @@
  		<div class="menu-block customscroll">
  			<div class="sidebar-menu">
  				<ul id="accordion-menu">
-
-
  					<li>
- 						<a href="dashboard.php" class="dropdown-toggle no-arrow">
+ 						<a href="../../admin/dashboard.php" class="dropdown-toggle no-arrow">
  							<span class="micon dw dw-invoice"></span><span class="mtext">menu</span>
  						</a>
  					</li>
@@ -25,9 +23,11 @@
  						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
  							aria-haspopup="true" aria-expanded="false">Manage users</a>
  						<div class="dropdown-menu" aria-labelledby="dropdown01">
- 							<a class="dropdown-item" href="userlist.php">Users list</a>
- 							<a class="dropdown-item" href="deleteduser.php">deleted users</a>
- 							<a class="dropdown-item" href="feedback.php">Feedback</a>
+ 							<a class="dropdown-item" href="../../admin/userlist.php">Users list</a>
+ 							<a class="dropdown-item" href="../../admin/deleteduser.php">deleted users</a>
+ 							<a class="dropdown-item" href="../../admin/feedback.php">Feedback</a>
+<a class="dropdown-item" href="../../admin/mail/mail.php">send mail</a>
+
 
  						</div>
  					</li>
@@ -35,11 +35,9 @@
  						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
  							aria-haspopup="true" aria-expanded="false">Manage employees</a>
  						<div class="dropdown-menu" aria-labelledby="dropdown01">
- 							<a class="dropdown-item" href="employeelist.php">employees list</a>
- 							<a class="dropdown-item" href="addemployee.php">Add employees</a>
- 							<a class="dropdown-item" href="adminemployees.php">Employees run by me</a>
-
-
+ 							<a class="dropdown-item" href="../../admin/employeelist.php">employees list</a>
+ 							<a class="dropdown-item" href="../../admin/addemployee.php">Add employees</a>
+ 							<a class="dropdown-item" href="../../admin/adminemployees.php">Employees run by me</a>
  						</div>
  					</li>
  					<li class="nav-item dropdown">
@@ -49,7 +47,6 @@
  							<a class="dropdown-item" href="download.php">excel list </a>
  							<a class="dropdown-item" href="pdf.php">pdf list</a>
  							<a class="dropdown-item" href="downloademployees.php">Employees excel list </a>
-
  						</div>
  					</li>
  					<li class="nav-item dropdown">
@@ -58,15 +55,8 @@
  						<div class="dropdown-menu" aria-labelledby="dropdown01">
  							<a class="dropdown-item" href="pie.php">gender repartition </a>
  							<a class="dropdown-item" href="barchart.php">designation per gender</a>
-
-
  						</div>
  					</li>
-
-
-
-
-
  					</li>
  					</li>
  					<a href="notification.php" class="dropdown-toggle no-arrow">
@@ -78,9 +68,6 @@
  						<span class="micon dw dw-invoice"></span><span class="mtext">locations</span>
  					</a>
  					</li>
-
-
-
  					<li class="nav-item dropdown">
  						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
  							aria-haspopup="true" aria-expanded="false">Produits</a>
@@ -89,7 +76,6 @@
  								href="/popupcampIntegrated/popupcamp/back/View/afficherProducts.php">show products</a>
  							<a class="dropdown-item"
  								href="/popupcampIntegrated/popupcamp/back/View/ajouterProduit.php">add product</a>
-
  						</div>
  					</li>
  					<li class="nav-item dropdown">
@@ -100,17 +86,14 @@
  								href="/popupcampIntegrated/popupcamp/back/View/affichercategorie.php">show category</a>
  							<a class="dropdown-item"
  								href="/popupcampIntegrated/popupcamp/back/View/ajouterCategorie.php">add category</a>
-
  						</div>
  					</li>
-
  					<li class="nav-item dropdown">
  						<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
  							aria-haspopup="true" aria-expanded="false">Commande</a>
  						<div class="dropdown-menu" aria-labelledby="dropdown01">
  							<a class="dropdown-item"
  								href="/popupcampIntegrated/popupcamp/back/View/afficherCommandes.php">show commande</a>
-
  						</div>
  					</li>
 					 <li class="nav-item dropdown">
@@ -121,7 +104,6 @@
  								href="/popupcampIntegrated/popupcamp/back/View/index.php">show Campgrounds</a>
  							<a class="dropdown-item"
  								href="/popupcampIntegrated/popupcamp/back/View/form-basic.php">add Campground</a>
-
  						</div>
  					</li>
 					 <li class="nav-item dropdown">
@@ -132,7 +114,6 @@
  								href="/popupcampIntegrated/popupcamp/back/View/test.php">Pie</a>
  							<a class="dropdown-item"
  								href="/popupcampIntegrated/popupcamp/back/View/test2.php">Histogram</a>
-
  						</div>
  					</li>
 					 <li class="nav-item dropdown">
@@ -150,7 +131,6 @@
     <a class="dropdown-item" href="../Views/addEvent.php">Add event</a>    
   </div>
 </li>
-
                                     
 					</li>
  </li>
@@ -162,8 +142,6 @@
                         <a class="dropdown-item" href="pdf2.php">Exprot pdf</a>
                         <a class="dropdown-item" href="download1.php">Export excel</a>
                         <a class="dropdown-item" href="../../../popupcamp/back/views/pie2.php">Charts</a>
-
-
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -174,11 +152,8 @@
                         <a class="dropdown-item" href="pdf1.php">Exprot pdf</a>
                         <a class="dropdown-item" href="download2.php">Export excel</a>
                         <a class="dropdown-item" href="../../../popupcamp/back/views/pie1.php">Charts</a>
-
                     </div>
                 </li>
-
-
 						<a href="download.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-invoice"></span><span class="mtext">EXPORT SUPPLIERS EXCEL</span>
 						</a>
@@ -224,7 +199,6 @@
  	<script src="deskapp2-master/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
  	<script src="deskapp2-master/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
  	<script src="deskapp2-master/vendors/scripts/dashboard.js"></script>
-
  </body>
 
  </html>

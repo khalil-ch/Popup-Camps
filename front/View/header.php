@@ -8,8 +8,8 @@
 
              <div class="col-3 ">
                <div class="site-logo">
-                 <a href="index.html" class="font-weight-bold">
-                   <img src="images/logo.png" alt="Image" class="img-fluid">
+                 <a href="index2.php" class="font-weight-bold">
+                   <img src="../images/popup.png" alt="Image" class="img-fluid">
                  </a>
                </div>
              </div>
