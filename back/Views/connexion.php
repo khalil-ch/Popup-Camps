@@ -149,10 +149,11 @@ a:active {
 					<a href="afficherFournisseur.php">back to list</a>
 	
         <hr>
-        <div id_f="error">
+        <div id="error">
             <?php echo $error; ?>
         </div>
-        
+        <form  method="post" class="form-horizontal" enctype="multipart/form-data" name="regform" onSubmit="return validate();">
+
         <form action="" method="POST">
             <table>
 
@@ -162,14 +163,14 @@ a:active {
                         <label for="id_f">ID:
                         </label>
                     </td>
-                    <td><input type="text" name="id_f" id_f="id_f" maxlength="10"></td>
+                    <td><input type="text" name="id_f" id="id_f" maxlength="10"></td>
                 </tr>
                 <tr>
                     <td>
                         <label for="type_service_f">Service type:
                         </label>
                     </td>
-                    <td><input type="text" name="type_service_f" id_f="type_service_f" maxlength="20"></td>
+                    <td><input type="text" name="type_service_f" id="type_service_f" maxlength="20"></td>
                 </tr>
                 
                 <tr>
@@ -178,7 +179,7 @@ a:active {
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="telephone_f" id_f="telephone_f"  placeholder="12-345-678" required>
+                        <input type="text" name="telephone_f" id="telephone_f"  placeholder="12-345-678" required>
                     </td>
                 </tr>
 
@@ -188,7 +189,7 @@ a:active {
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="RIB_f" id_f="RIB_f" length="14">
+                        <input type="text" name="RIB_f" id="RIB_f" maxlength="14">
                     </td>               
                 <tr>
 
@@ -196,10 +197,10 @@ a:active {
                     <td></td>
 					<td>
                     <td>
-                    <input type="submit" value="submit" onclick="verif();">
+                    <button  class="btn btn-primary" id="submit" type="submit">Submit</button>
                     </td>
                     <td>
-                    <input type="reset" value="reset">
+                    <button class="btn btn-primary" type="reset">Cancel</button>
                     </td>
                 </tr>
             </table>

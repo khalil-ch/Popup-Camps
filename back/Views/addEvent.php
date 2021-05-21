@@ -127,7 +127,7 @@ a:active {
           <br>
                 </select>
           <br>
-          <input type="submit" name="submit" value="submit" id="submitCreate" class="btn btn-primary" >
+          <button  class="btn btn-primary" id="submit" type="submit">Submit</button>
             <a href="afficherEvents.php" class="btn btn-success">back to list </a>
         </fieldset>
       </form>
@@ -136,6 +136,7 @@ a:active {
 		</div>
 	</div>
 	<!-- js -->
+  <script src="controleE.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap-select.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -145,13 +146,7 @@ a:active {
 	<script src="js/fileinput.js"></script>
 	<script src="js/chartData.js"></script>
 	<script src="js/main.js"></script>
-	<script type="text/javascript">
-				 $(document).ready(function () {          
-					setTimeout(function() {
-						$('.succWrap').slideUp("slow");
-					}, 3000);
-					});
-		</script>
+
      
   </body>
 </html>

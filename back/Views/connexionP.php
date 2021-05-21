@@ -128,14 +128,14 @@ if (isset($_POST["id_promo"]) &&
         <tr>
             <td rowspan='4' colspan='1'>List Des Promotions</td>
             <td>
-                <label  class="col-sm-1 control-label" for="id_promo">ID Promotion:<span style="color:red">*</span></label>
+                <label  class="col-sm-1 control-label" for="id_promo">ID:<span style="color:red">*</span></label>
                 <div class="col-sm-5">
             </td>
             <td><input type="number" name="id_promo" id="id_promo" maxlength="20" class="form-control" required></td>
         </tr>
         <tr>
             <td>
-                <label class="col-sm-1 control-label" for="nom_promo">Nom de Promotion:<span style="color:red">*</label>
+                <label class="col-sm-1 control-label" for="nom_promo">Promotion's Name:<span style="color:red">*</label>
                 <div class="col-sm-5">
             </td>
             <td>
@@ -144,12 +144,12 @@ if (isset($_POST["id_promo"]) &&
         </tr>
         <tr>
             <td>
-                <label class="col-sm-1 control-label" for="type_promo">Type de promotion:<span style="color:red">*</label>
+                <label class="col-sm-1 control-label" for="type_promo"> promotion's Type:<span style="color:red">*</label>
                 <div class="col-sm-5">
             </td>
             <td>
                 <select name="type_promo" id="type_promo" class="form-control" required>
-                    <option value="">--les options--</option>
+                    <option value="">-- options available--</option>
                     <option value="10%">10%</option>
                     <option value="20%">20%</option>
                     <option value="30%">30%</option>
@@ -162,7 +162,7 @@ if (isset($_POST["id_promo"]) &&
         </tr>
         <tr>
             <td>
-                <label class="col-sm-1 control-label" for="duree_promo">duree de promotion:<span style="color:red">*</label>
+                <label class="col-sm-1 control-label" for="duree_promo">Duration:<span style="color:red">*</label>
                 <div class="col-sm-5">
             </td>
             <td>
@@ -171,10 +171,10 @@ if (isset($_POST["id_promo"]) &&
         </tr>
 
         <td>
-            <button   id ="submit" type="submit">Envoyer</button>
+            <button   id ="submit" type="submit">Submit</button>
         </td>
         <td>
-            <button type="reset">Annuler</button>
+            <button type="reset">Cancel</button>
         </td>
         </tr>
     </table>

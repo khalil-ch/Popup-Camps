@@ -12,7 +12,7 @@ $pdf = new FPDF();
 $pdf->AddPage();
 // code for print Heading of tables
 $pdf->SetFont('Arial','B',12);
-$sql ="SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='popupcamps' AND `TABLE_NAME`='fournisseur'";
+$sql ="SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='mydb' AND `TABLE_NAME`='fournisseur'";
 $db = config::getConnexion();
 $query = $db->prepare($sql);
 $query->execute();

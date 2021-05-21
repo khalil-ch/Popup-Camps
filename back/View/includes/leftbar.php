@@ -146,6 +146,52 @@
 
  						</div>
  					</li>
+					 
+					 <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage suppliers</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+    <a class="dropdown-item" href="../Views/AfficherFournisseur.php">List  suppliers </a> 
+	<a class="dropdown-item" href="../Views/connexion.php">Add suppliers</a>
+	<a class="dropdown-item" href="pdf.php">Export list PDF</a>
+	<a class="dropdown-item" href="download.php">Export list EXCEL</a>
+   
+  </div>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage events</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+    <a class="dropdown-item" href="../Views/afficherEvents.php">List events</a>
+    <a class="dropdown-item" href="../Views/addEvent.php">Add event</a>    
+  </div>
+</li>
+
+                                    
+					</li>
+ </li>
+ <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Offers</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="connexionO.php">Add Offers</a>
+                        <a class="dropdown-item" href="afficherOffer.php">Offers List</a>
+                        <a class="dropdown-item" href="pdf2.php">Exprot pdf</a>
+                        <a class="dropdown-item" href="download1.php">Export excel</a>
+                        <a class="dropdown-item" href="../../../popupcamp/back/views/pie2.php">Charts</a>
+
+
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Promotions</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="connexionP.php">Add Promotions</a>
+                        <a class="dropdown-item" href="afficherPromo.php">Promotions List</a>
+                        <a class="dropdown-item" href="pdf1.php">Exprot pdf</a>
+                        <a class="dropdown-item" href="download2.php">Export excel</a>
+                        <a class="dropdown-item" href="../../../popupcamp/back/views/pie1.php">Charts</a>
+
+                    </div>
+                </li>
+
 
  				</ul>
  			</div>

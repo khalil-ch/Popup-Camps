@@ -1,7 +1,8 @@
 <?php
 include "../Controller/promo1.php";
 include_once '../Model/promo.php';
-session_start();
+include "../views/includes/header.php";
+include "../Views/includes/leftbar.php";
 $promo1 = new promo1();
 $error = "";
 
@@ -91,9 +92,9 @@ if (
 
 <body>
 
-    		<?php include('includes/header.php');?>
+    
 	<div class="ts-main-content">
-	<?php include('../includes/leftbar.php');?>
+
 
 	<div class="content-wrapper">
 		<div class="container-fluid">

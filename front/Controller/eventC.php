@@ -91,8 +91,8 @@ class eventC {
             $e->getMessage();
         }
     }
-    public function recupererEvent($idEvent){
-        $sql="SELECT * from event where idEvent=$idEvent";
+    public function recupererEvent($id){
+        $sql="SELECT * from event where idEvent=$id";
         $db = config::getConnexion();
         try{
             $query=$db->prepare($sql);

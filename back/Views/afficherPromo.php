@@ -98,12 +98,12 @@ $list1=$promo1->afficherPromo();
 <hr>
 <table border=1 align = 'center'>
     <tr>
-        <th class="table-plus datatable-nosort">ID Promotion</th>
+        <th class="table-plus datatable-nosort">ID </th>
         <th>Promotions Name</th>
         <th>Promotions Type</th>
         <th>Promotion Duration</th>
         <th class="datatable-nosort">Delete</th>
-        <th>Modifier</th>
+        <th>Edit</th>
     </tr>
 
     <?php
@@ -117,12 +117,12 @@ $list1=$promo1->afficherPromo();
 
             <td>
                 <form method="POST" action="supprimerPromo.php">
-                     <button class="btn btn-primary" name="submit" type="submit">Supprimer</button>
+                     <button class="btn btn-primary" name="submit" type="submit">Delete</button>
                     <input type="hidden" value=<?PHP echo $promo['id_promo']; ?> name="id_promo">
                 </form>
             </td>
             <td>
-                <a href="modifierPromo.php?id_promo=<?PHP echo $promo['id_promo']; ?>"> Modifier </a>
+                <a href="modifierPromo.php?id_promo=<?PHP echo $promo['id_promo']; ?>"> Edit</a>
             </td>
         </tr>
          <!-- Loading Scripts -->

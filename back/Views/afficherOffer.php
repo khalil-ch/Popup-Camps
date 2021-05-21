@@ -100,7 +100,7 @@ $list=$offer1->afficherOffer();
 <table >
 
     <tr>
-        <th class="table-plus datatable-nosort">Offer ID</th>
+        <th class="table-plus datatable-nosort">ID</th>
         <th>Offer Name</th>
         <th>Offer Type</th>
         <th>Offer Date</th>
@@ -127,7 +127,7 @@ $list=$offer1->afficherOffer();
             </td>
             <td>
 
-                <a href="modifierOffer.php?id_offer=<?PHP echo $offer['id_offer']; ?>"> Modifier </a>
+                <a href="modifierOffer.php?id_offer=<?PHP echo $offer['id_offer']; ?>"> Edit </a>
             </td>
         </tr>
 

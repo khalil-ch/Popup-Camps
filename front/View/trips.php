@@ -286,7 +286,7 @@ $list1=$promo1->afficherPromo();
               </div>
               <div class="col-lg-6">
                 <h2 class="footer-heading mb-4">Newsletter</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio iure animi ullam quam, deleniti rem!</p>
+                <p>PoP Up Camp has a NewsLetter Now Check it Out!</p>
                 <form action="#" class="d-flex" class="subscribe">
                   <input type="text" class="form-control mr-3" placeholder="Email">
                   <input type="submit" value="Send" class="btn btn-primary">

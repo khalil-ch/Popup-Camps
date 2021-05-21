@@ -150,8 +150,8 @@ $list=$offer1->afficherOffer();
                         <span class="subtitle-39191">Our Mission</span>
                         <h3>Our Mission</h3>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi quae expedita fugiat quo incidunt, possimus temporibus aperiam eum, quaerat sapiente.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos debitis enim a pariatur molestiae.</p>
+                    <p>Our Mission is very clear and simple.</p>
+                    <p> and that is simply to put smile on our costumers face and provide very exlusive offers.</p>
                 </div>
                 <div class="col-md-6 order-1" >
                     <img src="trips-master/images/hero_1.jpg" alt="Image" class="img-fluid">
@@ -247,7 +247,7 @@ $list=$offer1->afficherOffer();
               </div>
               <div class="col-lg-6">
                 <h2 class="footer-heading mb-4">Newsletter</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio iure animi ullam quam, deleniti rem!</p>
+                <p>Pop Up Camp has a News Letter now check it out.</p>
                 <form action="#" class="d-flex" class="subscribe">
                   <input type="text" class="form-control mr-3" placeholder="Email">
                   <input type="submit" value="Send" class="btn btn-primary">

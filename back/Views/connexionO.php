@@ -135,7 +135,7 @@ if (isset($_POST["id_offer"]) &&
     <table border="1" align="center">
 
         <tr>
-            <td rowspan='5' colspan='1'>List Des Offres</td>
+            <td rowspan='5' colspan='1'>  The Offre</td>
             <td>
                 <label class="col-sm-1 control-label" for="id_offer">ID:<span style="color:red">*</span></label>
                 <div class="col-sm-5">
@@ -144,7 +144,7 @@ if (isset($_POST["id_offer"]) &&
         </tr>
         <tr>
             <td>
-                <label class="col-sm-1 control-label" for="nom_offer">Nom d'offre:<span style="color:red">*</span></label>
+                <label class="col-sm-1 control-label" for="nom_offer">Offer Name:<span style="color:red">*</span></label>
                 <div class="col-sm-5">
             </td>
             <td>
@@ -153,7 +153,7 @@ if (isset($_POST["id_offer"]) &&
         </tr>
         <tr>
             <td>
-                <label class="col-sm-1 control-label" for="type_offer">Choose offer:<span style="color:red">*</span></label>
+                <label class="col-sm-1 control-label" for="type_offer">Offer's Type:<span style="color:red">*</span></label>
                 <div class="col-sm-5">
             </td>
             <td>
@@ -173,7 +173,7 @@ if (isset($_POST["id_offer"]) &&
 
         <tr>
             <td>
-                <label class="col-sm-1 control-label" for="date_offer">Date d'offre:
+                <label class="col-sm-1 control-label" for="date_offer">Offer's Date 
                     <span style="color:red">*</span>
                 </label>
                 <div class="col-sm-5">
@@ -184,7 +184,7 @@ if (isset($_POST["id_offer"]) &&
                        min="2021-01-01" max="2027-12-31" class="form-control" required>
         <tr>
             <td>
-                <label class="col-sm-1 control-label" for="duree_offer">duree d'offer: <span style="color:red">*</span></label>
+                <label class="col-sm-1 control-label" for="duree_offer">Duration: <span style="color:red">*</span></label>
                 <div class="col-sm-5">
             </td>
             <td>
@@ -194,7 +194,7 @@ if (isset($_POST["id_offer"]) &&
 
             <td>
 
-               <button  class="btn btn-primary" id ="submit" type="submit">Envoyer</button>
+               <button  class="btn btn-primary" id ="submit" type="submit">Submit</button>
 
             </td>
             <td>
