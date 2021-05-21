@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Trips &mdash; Website Template by Colorlib</title>
+    <title>Pop-up Camps</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -46,8 +46,8 @@
 
             <div class="col-3 ">
               <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">
-                  <img src="images/logo.png" alt="Image" class="img-fluid">
+                <a href="index2.php" class="font-weight-bold">
+                  <img src="images/popup.png" alt="Image" class="img-fluid">
                 </a>
               </div>
             </div>
