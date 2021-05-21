@@ -1,5 +1,5 @@
 <?php
- $db_connection = mysqli_connect('localhost','root','','armentum');
+ $db_connection = mysqli_connect('localhost','root','','mydb');
 ?>
 <!DOCTYPE HTML>
 <html>

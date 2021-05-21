@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "", "armentum");  
+ $connect = mysqli_connect("localhost", "root", "", "mydb");  
  $query = "SELECT gender, count(*) as number FROM users GROUP BY gender";  
  $result = mysqli_query($connect, $query);  
  ?>  
