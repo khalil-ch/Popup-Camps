@@ -1,5 +1,4 @@
 <?php
-	 
 	include '/xampp/htdocs/Popup-Camps-master/BackTemplate/Model/Campground.php';
 	include_once '../../config.php';
 
