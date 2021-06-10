@@ -2,11 +2,11 @@
 include "Bot.php";
 $bot = new Bot;
 $questions = [
-    "what is Pop-up camp" => "Pop-up camp is a camping site created by the team devcorps",
-"Are there new events?" => "You can check out our events in the event page",
+    
 
 
     "what is your name" => "My name is " . $bot->getName(),
+"what is popup camps" => "Pop-up camps is a camping site created by devcorps",
     "what is your gender" => "I am a " . $bot->getGender()
 ];
 
