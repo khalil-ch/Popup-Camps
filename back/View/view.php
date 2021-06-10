@@ -477,7 +477,7 @@ if (
 											href="advanced-components.php?idReview=<?PHP echo $onereview['idReview']; ?>&nomCamp=<?PHP echo $onereview['NomCampRv']; ?>"><i
 												class="dw dw-edit2"></i> Edit</a>
 										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i>
-											<form method="POST" action="supprimerReview.php">
+											<form method="POST" action="../Views/supprimerReview.php">
 												<button type="submit">Supprimer</button>
 												<input type="hidden" value=<?PHP echo $onereview['idReview']; ?>
 												name="id">

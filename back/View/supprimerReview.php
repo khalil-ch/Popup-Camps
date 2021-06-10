@@ -4,9 +4,9 @@
 
 	$reviewC=new ReviewC();
 	
-	if (isset($_POST["id"])){
-		$reviewC->supprimerReview($_POST["id"]);
-		header('Location:/index.php');
+	if (isset($_GET["id"])){
+		$reviewC->supprimerReview($_GET["id"]);
+		header('Location:index.php');
 	}
 
 ?>

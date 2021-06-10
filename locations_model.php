@@ -12,7 +12,7 @@ if(isset($_GET['confirm_location'])) {
 
 
 function add_location(){
-    $con=mysqli_connect ("localhost", 'root', '','armentum');
+    $con=mysqli_connect ("localhost", 'root', '','mydb');
     if (!$con) {
         die('Not connected : ' . mysqli_connect_error());
     }
@@ -34,7 +34,7 @@ function add_location(){
     }
 }
 function confirm_location(){
-    $con=mysqli_connect ("localhost", 'root', '','armentum');
+    $con=mysqli_connect ("localhost", 'root', '','mydb');
     if (!$con) {
         die('Not connected : ' . mysqli_connect_error());
     }
@@ -49,7 +49,7 @@ function confirm_location(){
     }
 }
 function get_confirmed_locations(){
-    $con=mysqli_connect ("localhost", 'root', '','armentum');
+    $con=mysqli_connect ("localhost", 'root', '','mydb');
     if (!$con) {
         die('Not connected : ' . mysqli_connect_error());
     }
@@ -75,7 +75,7 @@ from locations WHERE  location_status = 1
     }
 }
 function get_all_locations(){
-    $con=mysqli_connect ("localhost", 'root', '','armentum');
+    $con=mysqli_connect ("localhost", 'root', '','mydb');
     if (!$con) {
         die('Not connected : ' . mysqli_connect_error());
     }

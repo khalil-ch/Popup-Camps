@@ -586,7 +586,7 @@ $i=0;
 							<td><?php echo $review['user']; ?></td>
 							<td><?php echo $review['comment']; ?></td>
 							<td>
-								<form method="POST" action="supprimerReview.php">
+								<form method="POST" action="../Views/supprimerReview.php">
 									<button type="submit">Supprimer</button>
 									<input type="hidden" value=<?PHP echo $review['idReview']; ?> name="id">
 								</form>
