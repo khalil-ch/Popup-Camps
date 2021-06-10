@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Send mail from PHP using SMTP</title>
+	<title>Send mail </title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
@@ -26,7 +26,7 @@ require 'phpmailer/src/exception.php';
 			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 			$mail->Port = 587;                                    // TCP port to connect to
 
-			$mail->setFrom('popupcampsdevcorps@gmail.com', 'Dsmart Tutorials');
+			$mail->setFrom('popupcampsdevcorps@gmail.com', 'Popupcamps');
 			$mail->addAddress($_POST['email']);     // Add a recipient
 
 			$mail->addReplyTo('popupcampsdevcorps@gmail.com');
@@ -62,7 +62,7 @@ require 'phpmailer/src/exception.php';
             <div class="row">
                 <div class="col-sm-9 form-group">
                     <label for="subject">Subject:</label>
-                    <input type="text" class="form-control" id="subject" name="subject" value="Test Mail with attachments" maxlength="50">
+                    <input type="text" class="form-control" id="subject" name="subject" value="Send Mail with attachments" maxlength="50">
                 </div>
             </div>
             
