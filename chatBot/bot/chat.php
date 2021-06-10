@@ -2,7 +2,10 @@
 include "Bot.php";
 $bot = new Bot;
 $questions = [
-    "what is php" => "PHP is a server side language",
+    "what is Pop-up camp" => "Pop-up camp is a camping site created by the team devcorps",
+"Are there new events?" => "You can check out our events in the event page",
+
+
     "what is your name" => "My name is " . $bot->getName(),
     "what is your gender" => "I am a " . $bot->getGender()
 ];
