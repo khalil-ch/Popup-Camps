@@ -35,14 +35,13 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="listCamps.php">Camps</a></li>
-                <li><a class="dropdown-item" href="trips.html">Another action</a></li>
+                <li><a class="dropdown-item" href="trips.html">Trips</a></li>
                 <li><a href="trips.php" class="nav-link">Promotions</a></li>
                 <li><a href="produits.php" class="nav-link">Products</a></li>
                 <li><a href="Events.php" class="nav-link">Events</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
 
